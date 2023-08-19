@@ -39,13 +39,30 @@ public class ResourceNumberUI : MonoBehaviour
         }
     }
 
+    private static int ironNumber = 0;
+    public static int IronNumber
+    {
+        get
+        {
+            return ironNumber;
+        }
+        set
+        {
+            if (value < 0)
+            {
+                value = 0;
+            }
+            ironNumber = value;
+        }
+    }
+
     private static TextMeshProUGUI tip;
-    private void Start()
+    void Awake()
     {
         tip = this.GetComponent<TextMeshProUGUI>();
     }
     public static void updateResourceNumberText()
     {
-        tip.text = "粮食:" + foodNumber.ToString() + "\n木材:" + woodNumber.ToString();
+        tip.text = "粮食:" + foodNumber.ToString() + "\n木材:" + woodNumber.ToString() + "\n铁矿:" + ironNumber.ToString();
     }
 }

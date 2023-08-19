@@ -7,9 +7,11 @@ using TMPro;
 
 public class ActionNumberUI : MonoBehaviour
 {
-    public static int actionNumber = 5;
+    public const int actionNumberLimit = 10;                //行动点最大上限
+    public static int actionNumber = 1;              //行动点
     private static TextMeshProUGUI tip;
-    private void Start()
+    public static int actionNumberCurrentLimit = 1;  //行动点当前上限
+    void Awake()
     {
         tip = this.GetComponent<TextMeshProUGUI>();
     }
