@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: 78419accce4dc98438655146b5748cc7, type: 2}
+  tipResource: {fileID: 8571926888338205206, guid: 2eacec079e3caa448aee1c08a8338836, type: 3}
 --- !u!1 &994391981567389725
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,20 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bb14ebcaad29034a85e0542d18c2f39, type: 3}
-  m_Name: OrdinarySoldiers
+  m_Name: "\u5DE1\u903B\u4FDD\u5B89"
   m_EditorClassIdentifier: 
-  cardName: "\u666E\u901A\u58EB\u5175"
-  cardDescription: "\u6700\u666E\u901A\u7684\u58EB\u5175"
-  cardImage: {fileID: 21300000, guid: f671073220b084546b274f3dca897098, type: 3}
+  cardName: "\u5DE1\u903B\u4FDD\u5B89"
+  cardDescription: 
+  cardImage: {fileID: 0}
   cardType: "\u5175\u79CD\u5361"
-  costType:
-  - "\u7CAE\u98DF"
-  costValue: 02000000
+  cost:
+    _serializedList:
+    - Key: "\u8865\u7ED9"
+      Value: 4
+    - Key: "\u94C1\u77FF"
+      Value: 0
   gameObject: {fileID: 6695698467338365989, guid: 25339250a2697ee4589eb55bc6324089, type: 3}
   counts: 3
   locationRow: 080000000700000008000000
   locationColumn: 040000000500000006000000
-  attack: 2
-  defense: 2
-  Health: 1
+  perRoundCost: 2
+  attack: 20
+  defense: 20
+  Health: 10
   distance: 2

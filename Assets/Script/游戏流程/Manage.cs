@@ -7,9 +7,11 @@ public class Manage : MonoBehaviour
     public static Dictionary<string, int> resourceNumber = new Dictionary<string, int>();      //存储资源点增加的资源数量
     public List<GameObject> resourceCard;
     public List<GameObject> notresourceCard;
-    public static int rounds=1;                     //回合数
+    public static int rounds = 1;                     //回合数
+    public Transform Canvas;                         //Canvas
 
-    private void Start() {
+    private void Start()
+    {
         //初始化牌组
         //打乱resourceCard的顺序
         for (int i = 0; i < resourceCard.Count; i++)
@@ -42,22 +44,22 @@ public class Manage : MonoBehaviour
         //根据是否占领资源点来决定资源增加
         foreach (var item in resourceNumber)
         {
-            if(item.Key == "Food")
+            if (item.Key == "Food")
             {
                 ResourceNumberUI.FoodNumber += item.Value;
             }
-            else if(item.Key == "Wood")
+            else if (item.Key == "Wood")
             {
                 ResourceNumberUI.WoodNumber += item.Value;
             }
-            else if(item.Key == "Iron")
+            else if (item.Key == "Iron")
             {
                 ResourceNumberUI.IronNumber += item.Value;
             }
             ResourceNumberUI.updateResourceNumberText();
         }
         //行动点数恢复
-        if (ActionNumberUI.actionNumberLimit >= ActionNumberUI.actionNumberCurrentLimit&&rounds!=1)
+        if (ActionNumberUI.actionNumberLimit >= ActionNumberUI.actionNumberCurrentLimit && rounds != 1)
         {
             ActionNumberUI.actionNumberCurrentLimit++;
         }
@@ -76,11 +78,11 @@ public class Manage : MonoBehaviour
     [SerializeField] public GameObject tipCardIsNull;       //"你的牌库已空对话框"
     public void Draw()
     {
-       Debug.Log("游戏抽卡阶段开始");
+        Debug.Log("游戏抽卡阶段开始");
         if (resourceCard.Count == 0 && notresourceCard.Count == 0)
         {
             //生成提示，并在5秒后销毁
-            GameObject tip = Instantiate(tipCardIsNull, new Vector3(0, 0, 0), Quaternion.identity);
+            GameObject tip = Instantiate(tipCardIsNull, Canvas.position, Quaternion.identity);
             tip.transform.SetParent(GameObject.Find("Canvas").transform);
             Destroy(tip, 5);
             Action();
@@ -88,7 +90,7 @@ public class Manage : MonoBehaviour
         }
         //打开抽卡界面
         UIDraw.SetActive(true);
-        DrawCardCountsUI.resourceCardCountsCurrent=DrawCardCountsUI.resourceCardCountsLimit;
+        DrawCardCountsUI.resourceCardCountsCurrent = DrawCardCountsUI.resourceCardCountsLimit;
         DrawCardCountsUI.updateResourceCardCountsText();
     }
 
@@ -113,6 +115,9 @@ public class Manage : MonoBehaviour
         isActionFinish = false;
         isEnd = true;
         rounds++;
+        StaticGround.updateObjectsControlRealDistance();     //更新物体的realDistance
         Begin();
     }
+
+
 }

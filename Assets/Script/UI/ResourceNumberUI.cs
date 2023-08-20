@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 public class ResourceNumberUI : MonoBehaviour
 {
-    private static int foodNumber = 5;
+    private static int foodNumber = CollectionOfConstants.initialFoodNumber;
     public static int FoodNumber
     {
         get
@@ -39,7 +40,7 @@ public class ResourceNumberUI : MonoBehaviour
         }
     }
 
-    private static int ironNumber = 0;
+    private static int ironNumber = CollectionOfConstants.initialIronNumber;
     public static int IronNumber
     {
         get
@@ -60,9 +61,11 @@ public class ResourceNumberUI : MonoBehaviour
     void Awake()
     {
         tip = this.GetComponent<TextMeshProUGUI>();
+        updateResourceNumberText();
     }
     public static void updateResourceNumberText()
     {
-        tip.text = "粮食:" + foodNumber.ToString() + "\n木材:" + woodNumber.ToString() + "\n铁矿:" + ironNumber.ToString();
+        tip.text = "补给:" + foodNumber.ToString() +  "\n铁矿:" + ironNumber.ToString();
+        // "\n木材:" + woodNumber.ToString() +
     }
 }

@@ -11,12 +11,24 @@ public class ObjectsControl : MonoBehaviour
     public int row;                        // 行
     public int column;                     // 列
     public int realDistance;               // 回合中实际剩余步数
-    private void Start()
+    public GameObject evacuateButton;       // 撤退按钮
+    private void Awake()
     {
         realDistance = cardData.distance;
     }
 
     private void OnMouseDown()
+    {
+        //更新整张地图恢复原来的颜色
+        StaticGround.updateGroundsColor();
+        SearchAndShowGrounds();
+        evacuateButton.SetActive(true);
+
+    }
+    /// <summary>
+    /// 寻找并展示可以去的地方
+    /// </summary>
+    public void SearchAndShowGrounds()
     {
         //当物体被点击后，物体通过cardData中的distance来判断哪些格子可以到达
         //将所有可以到达的格子变成绿色
@@ -28,21 +40,21 @@ public class ObjectsControl : MonoBehaviour
                 {
                     if ((i != 0 || j != 0) && ((i + j) <= realDistance))
                     {
-                        if (row + i < 9 && column + j < 11 && !(row + i == MainCityRow && column + j == MainCityColumn))
+                        if (row + i < CollectionOfConstants.MapRow && column + j < CollectionOfConstants.MapColumn && !(row + i == MainCityRow && column + j == MainCityColumn))
                         {
                             StaticGround.grounds[row + i, column + j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
                             StaticGround.grounds[row + i, column + j].GetComponent<Ground>().isActive = true;
                             StaticGround.grounds[row + i, column + j].GetComponent<Ground>().Steps = i + j;
                             StaticGround.grounds[row + i, column + j].GetComponent<Ground>().objectControl = this.gameObject;
                         }
-                        if (row - i >= 0 && column + j < 11 && !(row - i == MainCityRow && column + j == MainCityColumn))
+                        if (row - i >= 0 && column + j < CollectionOfConstants.MapColumn && !(row - i == MainCityRow && column + j == MainCityColumn))
                         {
                             StaticGround.grounds[row - i, column + j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
                             StaticGround.grounds[row - i, column + j].GetComponent<Ground>().isActive = true;
                             StaticGround.grounds[row - i, column + j].GetComponent<Ground>().Steps = i + j;
                             StaticGround.grounds[row - i, column + j].GetComponent<Ground>().objectControl = this.gameObject;
                         }
-                        if (row + i < 9 && column - j >= 0 && !(row + i == MainCityRow && column - j == MainCityColumn))
+                        if (row + i < CollectionOfConstants.MapRow && column - j >= 0 && !(row + i == MainCityRow && column - j == MainCityColumn))
                         {
                             StaticGround.grounds[row + i, column - j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
                             StaticGround.grounds[row + i, column - j].GetComponent<Ground>().isActive = true;
@@ -60,6 +72,5 @@ public class ObjectsControl : MonoBehaviour
                 }
             }
         }
-
     }
 }

@@ -49,7 +49,8 @@ public class Arrow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHan
         ctrlBPos.x = startPos.x - (startPos.x - endPos.x) * 0.3f;
 
         //将曲线显示出来
-        ArrowParent.SetActive(true);
+        if (CardShow.isAllowDrag)
+            ArrowParent.SetActive(true);
 
         //根据贝塞尔曲线重新设置所有小箭头的位置
         for (int i = 0; i < ArrowNodes.Count; i++)
@@ -93,16 +94,25 @@ public class Arrow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHan
     private Vector3 myPos;
     public void OnBeginDrag(PointerEventData eventData)
     {
-        ArrowParent.SetActive(true);
+        if (CardShow.isAllowDrag)
+        {
+            ArrowParent.SetActive(true);
+        }
     }
     public void OnDrag(PointerEventData eventData)
     {
-        myPos = this.transform.position;
-        mousePos = Input.mousePosition;
-        UpdateArrow(myPos, mousePos);
+        if (CardShow.isAllowDrag)
+        {
+            myPos = this.transform.position;
+            mousePos = Input.mousePosition;
+            UpdateArrow(myPos, mousePos);
+        }
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        ArrowParent.SetActive(false);
+        if (CardShow.isAllowDrag)
+        {
+            ArrowParent.SetActive(false);
+        }
     }
 }
