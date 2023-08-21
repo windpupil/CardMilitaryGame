@@ -22,7 +22,7 @@ public class CardShow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
         this.transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = cardData.attack.ToString();
         this.transform.GetChild(1).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = cardData.defense.ToString();
         this.transform.GetChild(1).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = cardData.health.ToString();
-        this.transform.GetChild(1).GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text = cardData.distance.ToString();
+        this.transform.GetChild(1).GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text = cardData.moveDistance.ToString();
 
         this.transform.GetChild(1).GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>().text = cardData.cost["补给"].ToString();//这里需要修改
         

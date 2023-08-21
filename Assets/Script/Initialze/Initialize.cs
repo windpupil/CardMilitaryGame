@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// 本脚本用于生成初始化地图
+/// </summary>
 public class Initialize : MonoBehaviour
 {
     [SerializeField]

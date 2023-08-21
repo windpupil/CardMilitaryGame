@@ -31,7 +31,7 @@ public class StaticGround : MonoBehaviour
     }
 
     /// <summary>
-    /// 将所有格子变成原来的颜色
+    /// 将所有grounds标签的格子变成原来的颜色
     /// </summary>
     public static void updateGroundsColor()
     {
@@ -39,7 +39,7 @@ public class StaticGround : MonoBehaviour
         {
             for (int j = 0; j < CollectionOfConstants.MapColumn; j++)
             {
-                if (!grounds[i, j].GetComponent<Ground>().isHaveObject && grounds[i, j].tag != "MainCity")
+                if (!grounds[i, j].GetComponent<Ground>().isHaveObject && grounds[i, j].tag == "Grounds")
                 {
                     grounds[i, j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.white;
                     grounds[i, j].GetComponent<Ground>().isActive = false;

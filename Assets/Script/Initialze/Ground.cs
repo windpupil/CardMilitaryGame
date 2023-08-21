@@ -48,7 +48,7 @@ public class Ground : MonoBehaviour
     {
         if(isHaveObject)
         {
-            objectControl.GetComponent<ObjectsControl>().realDistance = objectControl.GetComponent<ObjectsControl>().cardData.distance;
+            objectControl.GetComponent<ObjectsControl>().realDistance = objectControl.GetComponent<ObjectsControl>().cardData.moveDistance;
         }
     }
 }

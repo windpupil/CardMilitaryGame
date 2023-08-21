@@ -22,12 +22,16 @@ MonoBehaviour:
       Value: 4
     - Key: "\u94C1\u77FF"
       Value: 0
+  perCost:
+    _serializedList:
+    - Key: "\u8865\u7ED9"
+      Value: 2
   gameObject: {fileID: 6695698467338365989, guid: 25339250a2697ee4589eb55bc6324089, type: 3}
   counts: 3
   locationRow: 080000000700000008000000
   locationColumn: 040000000500000006000000
-  perRoundCost: 2
   attack: 20
   defense: 20
-  Health: 10
-  distance: 2
+  attackDistance: 1
+  moveDistance: 2
+  maxAttackNumber: 1

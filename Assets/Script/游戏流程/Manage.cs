@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 本脚本是游戏流程的控制脚本
+/// </summary>
 public class Manage : MonoBehaviour
 {
-    public static Dictionary<string, int> resourceNumber = new Dictionary<string, int>();      //存储资源点增加的资源数量
-    public List<GameObject> resourceCard;
-    public List<GameObject> notresourceCard;
+    public static List<GameObject> resourcePoints=new List<GameObject>();      //资源点
+    public List<GameObject> resourceCard=new List<GameObject>();
+    public List<GameObject> notresourceCard=new List<GameObject>();
     public static int rounds = 1;                     //回合数
     public Transform Canvas;                         //Canvas
 
@@ -41,22 +44,10 @@ public class Manage : MonoBehaviour
     {
         Debug.Log("游戏准备阶段开始");
         isBegin = true;
-        //根据是否占领资源点来决定资源增加
-        foreach (var item in resourceNumber)
+        //遍历所有资源点，将资源点的资源数加到资源UI上
+        for (int i = 0; i < resourcePoints.Count; i++)
         {
-            if (item.Key == "Food")
-            {
-                ResourceNumberUI.FoodNumber += item.Value;
-            }
-            else if (item.Key == "Wood")
-            {
-                ResourceNumberUI.WoodNumber += item.Value;
-            }
-            else if (item.Key == "Iron")
-            {
-                ResourceNumberUI.IronNumber += item.Value;
-            }
-            ResourceNumberUI.updateResourceNumberText();
+            resourcePoints[i].GetComponent<ResourceGround>().AddResource();
         }
         //行动点数恢复
         if (ActionNumberUI.actionNumberLimit >= ActionNumberUI.actionNumberCurrentLimit && rounds != 1)

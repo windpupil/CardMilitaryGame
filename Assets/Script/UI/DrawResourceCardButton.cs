@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// 本脚本用于抽卡
+/// </summary>
 public class DrawResourceCardButton : MonoBehaviour
 {
     [SerializeField] private GameObject handCard;
     public Manage manage;
     public GameObject UIDraw;
-    public Vector3 cardPosition = new Vector3(0, 0, 0);
-    [SerializeField] private Vector3 cardPositionChange = new Vector3(0, 380, 0);
-    [SerializeField] private int cardPositionChangeX = 50;
 
     private void Start()
     {
-        cardPosition=manage.Canvas.position- cardPositionChange;
         if (CheckIsNull(manage.resourceCard.Count))
         {
             //将按钮设置为不可用
@@ -24,8 +24,7 @@ public class DrawResourceCardButton : MonoBehaviour
     public void resourceCardClick()
     {
         //生成卡牌
-        GameObject card = Instantiate(manage.resourceCard[manage.resourceCard.Count - 1], cardPosition-cardPositionChange, Quaternion.identity);
-        cardPosition.x += cardPositionChangeX;
+        GameObject card = Instantiate(manage.resourceCard[manage.resourceCard.Count - 1], this.transform.position, Quaternion.identity);
         card.transform.SetParent(handCard.transform);
         //移除卡牌
         manage.resourceCard.RemoveAt(manage.resourceCard.Count - 1);
@@ -55,8 +54,7 @@ public class DrawResourceCardButton : MonoBehaviour
     {
 
         //生成卡牌
-        GameObject card = Instantiate(manage.notresourceCard[manage.notresourceCard.Count - 1], cardPosition-cardPositionChange, Quaternion.identity);
-        cardPosition.x += cardPositionChangeX;
+        GameObject card = Instantiate(manage.notresourceCard[manage.notresourceCard.Count - 1], this.transform.position, Quaternion.identity);
         card.transform.SetParent(handCard.transform);
         //移除卡牌
         manage.notresourceCard.RemoveAt(manage.notresourceCard.Count - 1);
@@ -86,7 +84,6 @@ public class DrawResourceCardButton : MonoBehaviour
     public GameObject tipCardIsNull;
     private void Finish()
     {
-        cardPosition=manage.Canvas.position- cardPositionChange;
         UIDraw.SetActive(false);
         //进入行动阶段
     }
@@ -99,6 +96,4 @@ public class DrawResourceCardButton : MonoBehaviour
         }
         return false;
     }
-
 }
-//行动点的更新
