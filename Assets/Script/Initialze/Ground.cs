@@ -7,6 +7,7 @@ public class Ground : MonoBehaviour
 {
     public bool isActive = false;  //是否激活
     public GameObject objectControl;    //格子上的物体
+    public GameObject possibleFootholds;  //可能的落脚点
     public bool isHaveObject = false;  //是否有物体
     public int row;              //行
     public int column;           //列
@@ -28,25 +29,26 @@ public class Ground : MonoBehaviour
                     }
                 }
             }
+            objectControl=possibleFootholds;
             isHaveObject = true;
             //将物体原来所在的位置更新为没有物体
-            StaticGround.grounds[objectControl.GetComponent<ObjectsControl>().row, objectControl.GetComponent<ObjectsControl>().column].GetComponent<Ground>().isHaveObject = false;
+            StaticGround.grounds[possibleFootholds.GetComponent<ObjectsControl>().row, possibleFootholds.GetComponent<ObjectsControl>().column].GetComponent<Ground>().isHaveObject = false;
             //将物体移动到这个格子上
-            objectControl.transform.position = this.transform.position;
+            possibleFootholds.transform.position = this.transform.position;
             //将物体的行列数改变
-            objectControl.GetComponent<ObjectsControl>().row = row;
-            objectControl.GetComponent<ObjectsControl>().column = column;
+            possibleFootholds.GetComponent<ObjectsControl>().row = row;
+            possibleFootholds.GetComponent<ObjectsControl>().column = column;
             //行动点-1
             ActionNumberUI.actionNumber--;
             ActionNumberUI.updateActionNumberText();
             //distance减去相应的步数
-            objectControl.GetComponent<ObjectsControl>().realDistance -= Steps;
+            possibleFootholds.GetComponent<ObjectsControl>().realDistance -= Steps;
         }
     }
 
     public void updateObjectsControlRealDistance()
     {
-        if(isHaveObject)
+        if(isHaveObject&&objectControl.tag=="Soldier")
         {
             objectControl.GetComponent<ObjectsControl>().realDistance = objectControl.GetComponent<ObjectsControl>().cardData.moveDistance;
         }

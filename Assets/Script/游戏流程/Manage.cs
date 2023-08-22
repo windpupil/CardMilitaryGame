@@ -107,6 +107,7 @@ public class Manage : MonoBehaviour
         isEnd = true;
         rounds++;
         StaticGround.updateObjectsControlRealDistance();     //更新物体的realDistance
+        StaticGround.updateSoldierAttackNumber();      //更新物体的attackNumber
         Begin();
     }
 

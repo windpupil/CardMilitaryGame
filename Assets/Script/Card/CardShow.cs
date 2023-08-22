@@ -25,7 +25,7 @@ public class CardShow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
         this.transform.GetChild(1).GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text = cardData.moveDistance.ToString();
 
         this.transform.GetChild(1).GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>().text = cardData.cost["补给"].ToString();//这里需要修改
-        
+
         this.transform.GetChild(1).GetChild(5).GetChild(0).GetComponent<TextMeshProUGUI>().text = cardData.cardType;
         this.transform.GetChild(1).GetChild(6).GetComponent<TextMeshProUGUI>().text = cardData.cardName;
         this.transform.GetChild(1).GetChild(7).GetComponent<TextMeshProUGUI>().text = cardData.cardDescription;

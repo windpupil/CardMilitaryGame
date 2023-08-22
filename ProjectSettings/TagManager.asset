@@ -8,6 +8,7 @@ TagManager:
   - Init
   - MainCity
   - Grounds
+  - Soldier
   layers:
   - Default
   - TransparentFX

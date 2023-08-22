@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 /// <summary>
 /// 本脚本是物体的控制脚本
 /// </summary>
@@ -17,37 +16,9 @@ public class ObjectsControl : MonoBehaviour
     public int realDistance;               // 回合中实际剩余步数
     public GameObject evacuateButton;       // 撤退按钮
 
-
-    private int attackNumber ;               //本回合攻击次数
-    private int HP;                                     // 生命值
-    public int hp
-    {
-        get { return HP; }
-        set
-        {
-            if (value < 0)
-            {
-                HP = 0;
-            }
-            else
-            {
-                HP = value;
-            }
-        }
-    }
-    private int attack ;                               // 攻击力
-    private int defense ;                            // 防御力
     private void Awake()
     {
         realDistance = cardData.moveDistance;
-        //初始化攻击次数
-        attackNumber = cardData.maxAttackNumber;
-        //初始化生命值
-        hp = cardData.health;
-        //初始化攻击力
-        attack = cardData.attack;
-        //初始化防御力
-        defense = cardData.defense;
     }
 
     private void OnMouseDown()
@@ -56,7 +27,6 @@ public class ObjectsControl : MonoBehaviour
         StaticGround.updateGroundsColor();
         SearchAndShowGrounds();
         evacuateButton.SetActive(true);
-
     }
     /// <summary>
     /// 寻找并展示可以去的地方
@@ -78,40 +48,32 @@ public class ObjectsControl : MonoBehaviour
                             StaticGround.grounds[row + i, column + j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
                             StaticGround.grounds[row + i, column + j].GetComponent<Ground>().isActive = true;
                             StaticGround.grounds[row + i, column + j].GetComponent<Ground>().Steps = i + j;
-                            StaticGround.grounds[row + i, column + j].GetComponent<Ground>().objectControl = this.gameObject;
+                            StaticGround.grounds[row + i, column + j].GetComponent<Ground>().possibleFootholds = this.gameObject;
                         }
                         if (row - i >= 0 && column + j < CollectionOfConstants.MapColumn && !(row - i == MainCityRow && column + j == MainCityColumn))
                         {
                             StaticGround.grounds[row - i, column + j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
                             StaticGround.grounds[row - i, column + j].GetComponent<Ground>().isActive = true;
                             StaticGround.grounds[row - i, column + j].GetComponent<Ground>().Steps = i + j;
-                            StaticGround.grounds[row - i, column + j].GetComponent<Ground>().objectControl = this.gameObject;
+                            StaticGround.grounds[row - i, column + j].GetComponent<Ground>().possibleFootholds = this.gameObject;
                         }
                         if (row + i < CollectionOfConstants.MapRow && column - j >= 0 && !(row + i == MainCityRow && column - j == MainCityColumn))
                         {
                             StaticGround.grounds[row + i, column - j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
                             StaticGround.grounds[row + i, column - j].GetComponent<Ground>().isActive = true;
                             StaticGround.grounds[row + i, column - j].GetComponent<Ground>().Steps = i + j;
-                            StaticGround.grounds[row + i, column - j].GetComponent<Ground>().objectControl = this.gameObject;
+                            StaticGround.grounds[row + i, column - j].GetComponent<Ground>().possibleFootholds = this.gameObject;
                         }
                         if (row - i >= 0 && column - j >= 0 && !(row - i == MainCityRow && column - j == MainCityColumn))
                         {
                             StaticGround.grounds[row - i, column - j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
                             StaticGround.grounds[row - i, column - j].GetComponent<Ground>().isActive = true;
                             StaticGround.grounds[row - i, column - j].GetComponent<Ground>().Steps = i + j;
-                            StaticGround.grounds[row - i, column - j].GetComponent<Ground>().objectControl = this.gameObject;
+                            StaticGround.grounds[row - i, column - j].GetComponent<Ground>().possibleFootholds = this.gameObject;
                         }
                     }
                 }
             }
         }
-    }
-
-    /// <summary>
-    /// 攻击
-    /// </summary>
-    public void Attack()
-    {
-
     }
 }

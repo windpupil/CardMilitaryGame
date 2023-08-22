@@ -19,6 +19,9 @@ public class StaticGround : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 更新所有物体的realDistance
+    /// </summary>
     public static void updateObjectsControlRealDistance()
     {
         for (int i = 0; i < CollectionOfConstants.MapRow; i++)
@@ -43,6 +46,23 @@ public class StaticGround : MonoBehaviour
                 {
                     grounds[i, j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.white;
                     grounds[i, j].GetComponent<Ground>().isActive = false;
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    ///更新所有格子上士兵的攻击次数
+    /// <summary>
+    public static void updateSoldierAttackNumber()
+    {
+        for (int i = 0; i < CollectionOfConstants.MapRow; i++)
+        {
+            for (int j = 0; j < CollectionOfConstants.MapColumn; j++)
+            {
+                if (grounds[i, j].GetComponent<Ground>().isHaveObject && grounds[i, j].GetComponent<Ground>().objectControl.tag == "Soldier")
+                {
+                    grounds[i, j].GetComponent<Ground>().objectControl.GetComponent<Fight>().attackNumber = grounds[i, j].GetComponent<Ground>().objectControl.GetComponent<Fight>().data.cardData.maxAttackNumber;
                 }
             }
         }
