@@ -42,7 +42,8 @@ public class StaticGround : MonoBehaviour
         {
             for (int j = 0; j < CollectionOfConstants.MapColumn; j++)
             {
-                if (!grounds[i, j].GetComponent<Ground>().isHaveObject && grounds[i, j].tag == "Grounds")
+                // if (!grounds[i, j].GetComponent<Ground>().isHaveObject && grounds[i, j].tag == "Grounds")
+                if ( grounds[i, j].tag == "Grounds")
                 {
                     grounds[i, j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.white;
                     grounds[i, j].GetComponent<Ground>().isActive = false;

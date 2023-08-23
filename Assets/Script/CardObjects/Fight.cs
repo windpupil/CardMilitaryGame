@@ -60,9 +60,6 @@ public class Fight : MonoBehaviour
             // }
             // Debug.Log(data.row - i);
             // Debug.Log(data.column);
-
-
-
             if(data.row+i<CollectionOfConstants.MapRow&&StaticGround.grounds[data.row+i,data.column].GetComponent<Ground>().objectControl!=null&&StaticGround.grounds[data.row+i,data.column].GetComponent<Ground>().objectControl.tag=="Enemy")
             {
                 enemy.Add(StaticGround.grounds[data.row + i, data.column].GetComponent<Ground>().objectControl);
@@ -90,11 +87,11 @@ public class Fight : MonoBehaviour
     {
         if (enemy.isAttacking)
         {
-            updateHP(computeDamageInAttack(enemy.defense,this.attack));
+            enemy.updateHP(computeDamageInAttack(enemy.defense,this.attack));
         }
         else
         {
-            updateHP(computeDamageInDefense(enemy.defense,this.attack));
+            enemy.updateHP(computeDamageInDefense(enemy.defense,this.attack));
         }
     }
 
@@ -111,7 +108,7 @@ public class Fight : MonoBehaviour
     ///<summary>
     public float computeDamageInAttack(int defense,int attack)
     {
-        return attack^attack/(attack+2*defense);
+        return attack*attack/(attack+2.0f*defense);
     }
 
     /// <summary>
@@ -141,8 +138,8 @@ public class Fight : MonoBehaviour
     private void OnMouseUp() {
         if (isAttacking&&(attackNumber>0))
         {
-            Debug.Log(hit.collider.gameObject.name);
-            Debug.Log(enemy.Count);
+            // Debug.Log(hit.collider.gameObject.name);
+            // Debug.Log(enemy.Count);
             if (hit.collider != null)
             {
                 for (int i = 0; i < enemy.Count; i++)
@@ -156,6 +153,18 @@ public class Fight : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    public bool IsAllowAttack()
+    {
+        if (isAttacking&&(attackNumber>0))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

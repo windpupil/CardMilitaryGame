@@ -18,21 +18,13 @@ public class Ground : MonoBehaviour
         {
             //当格子被点击后，物体移动到这个格子上
             //将格子变成原来的颜色
-            for (int i = 0; i < CollectionOfConstants.MapRow; i++)
-            {
-                for (int j = 0; j < CollectionOfConstants.MapColumn; j++)
-                {
-                    if (!isHaveObject&&StaticGround.grounds[i, j].tag!="MainCity")
-                    {
-                        StaticGround.grounds[i, j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.white;
-                        StaticGround.grounds[i, j].GetComponent<Ground>().isActive = false;
-                    }
-                }
-            }
+            StaticGround.updateGroundsColor();
+            //将物体的对象赋值到这个格子上
             objectControl=possibleFootholds;
             isHaveObject = true;
             //将物体原来所在的位置更新为没有物体
             StaticGround.grounds[possibleFootholds.GetComponent<ObjectsControl>().row, possibleFootholds.GetComponent<ObjectsControl>().column].GetComponent<Ground>().isHaveObject = false;
+            StaticGround.grounds[possibleFootholds.GetComponent<ObjectsControl>().row, possibleFootholds.GetComponent<ObjectsControl>().column].GetComponent<Ground>().objectControl = null;
             //将物体移动到这个格子上
             possibleFootholds.transform.position = this.transform.position;
             //将物体的行列数改变

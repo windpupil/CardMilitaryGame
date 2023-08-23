@@ -14,7 +14,6 @@ public class ObjectsControl : MonoBehaviour
     public int row;                        // 行
     public int column;                     // 列
     public int realDistance;               // 回合中实际剩余步数
-    public GameObject evacuateButton;       // 撤退按钮
 
     private void Awake()
     {
@@ -26,7 +25,6 @@ public class ObjectsControl : MonoBehaviour
         //更新整张地图恢复原来的颜色
         StaticGround.updateGroundsColor();
         SearchAndShowGrounds();
-        evacuateButton.SetActive(true);
     }
     /// <summary>
     /// 寻找并展示可以去的地方

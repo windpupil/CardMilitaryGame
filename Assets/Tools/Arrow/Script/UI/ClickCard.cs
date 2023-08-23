@@ -37,7 +37,6 @@ namespace WrittenTest {
 
         #region 点击拖拽事件
         public void OnPointerDown(PointerEventData eventData) {
-            Debug.Log("OnPointerDown");
             m_PointerDownEvent?.Invoke();
         }
 

@@ -1,7 +1,9 @@
+using System.Net.Mime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -28,6 +30,9 @@ public class Enemy : MonoBehaviour
     }
     public int attack ;                               // 攻击力
     public int defense ;                            // 防御力
+
+    [SerializeField]
+    private Image HealthBar;                    // 血条
     private void Awake()
     {
         //初始化攻击次数
@@ -38,6 +43,10 @@ public class Enemy : MonoBehaviour
         attack = cardData.attack;
         //初始化防御力
         defense = cardData.defense;
+    }
+
+    private void Start() {
+        HealthBar.transform.position = Camera.main.WorldToScreenPoint(this.transform.position);
     }
 
     public bool isAttacking = true;   //是否是攻击状态
@@ -70,9 +79,8 @@ public class Enemy : MonoBehaviour
     ///<summary>
     public float computeDamageInAttack(int defense,int attack)
     {
-        return attack^attack/(attack+2*defense);
+        return attack*attack/(attack+2.0f*defense);
     }
-
 
     /// <summary>
     ///更新血量
@@ -80,7 +88,16 @@ public class Enemy : MonoBehaviour
     public void updateHP(float damage)
     {
         this.hp -= damage;
-        Debug.Log(this.hp);
-        //更新ui
+        Debug.Log(damage);
+        HealthBar.fillAmount = hp / cardData.health;
+        //判断是否死亡
+        if (hp <= 0)
+        {
+            //将格子状态改为无人
+            StaticGround.grounds[row, column].GetComponent<Ground>().isHaveObject = false;
+            StaticGround.grounds[row, column].GetComponent<Ground>().objectControl = null;
+            //死亡
+            Destroy(this.gameObject);
+        }
     }
 }
