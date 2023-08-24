@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class BeginGameUI : MonoBehaviour
 {
+    [Tooltip("本变量用于存放开始游戏界面")]
+    [SerializeField]
+    private GameObject beginGameUI;
     public void Begin () {
-        Debug.Log("点击了开始游戏按钮");
+        beginGameUI.SetActive(false);
     }
 }

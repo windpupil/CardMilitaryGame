@@ -20,10 +20,14 @@ MonoBehaviour:
     _serializedList:
     - Key: "\u8865\u7ED9"
       Value: 3
+    - Key: "\u94C1\u77FF"
+      Value: 0
   perCost:
     _serializedList:
     - Key: "\u8865\u7ED9"
       Value: 2
+    - Key: "\u94C1\u77FF"
+      Value: 0
   gameObject: {fileID: 0}
   counts: 3
   locationRow: 080000000700000008000000

@@ -66,7 +66,6 @@ public class Fight : MonoBehaviour
             }
             if (data.row - i >= 0 && StaticGround.grounds[data.row - i, data.column].GetComponent<Ground>().objectControl != null && StaticGround.grounds[data.row - i, data.column].GetComponent<Ground>().objectControl.tag == "Enemy")
             {
-                Debug.Log("2");
                 enemy.Add(StaticGround.grounds[data.row - i, data.column].GetComponent<Ground>().objectControl);
             }
             if (data.column + i < CollectionOfConstants.MapColumn && StaticGround.grounds[data.row, data.column + i].GetComponent<Ground>().objectControl != null && StaticGround.grounds[data.row, data.column + i].GetComponent<Ground>().objectControl.tag == "Enemy")

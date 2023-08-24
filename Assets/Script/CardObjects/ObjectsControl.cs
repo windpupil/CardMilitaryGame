@@ -8,6 +8,11 @@ using UnityEngine;
 /// </summary>
 public class ObjectsControl : MonoBehaviour
 {
+    private static ObjectsControl instance;
+    public static ObjectsControl Instance
+    {
+        get { return instance; }
+    }
     public const int MainCityRow = 8;
     public const int MainCityColumn = 5;
     public SoldierCardData cardData;
@@ -18,6 +23,15 @@ public class ObjectsControl : MonoBehaviour
     private void Awake()
     {
         realDistance = cardData.moveDistance;
+    }
+    private void Start() {
+        instance = this;
+    }
+
+    private void OnDestroy() {
+        CollectionOfConstants.SuppliesConsumedPerTurn-=cardData.perCost["补给"];
+        CollectionOfConstants.IronConsumedPerTurn-=cardData.perCost["铁矿"];
+        StaticGround.updateGroundsColor();
     }
 
     private void OnMouseDown()

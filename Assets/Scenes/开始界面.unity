@@ -605,6 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1e7c67338d6ab49b23a158b74adc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beginGameUI: {fileID: 1506982031}
 --- !u!1 &764970511
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,7 +920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1506982032
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1003,7 +1004,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &1594459711
 GameObject:
@@ -1485,6 +1486,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1933602063}
-  - {fileID: 1506982032}
   - {fileID: 656822605}
   - {fileID: 1997145871}
+  - {fileID: 1506982032}
