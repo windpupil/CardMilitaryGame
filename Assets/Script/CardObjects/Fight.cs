@@ -7,6 +7,11 @@ using UnityEngine;
 public class Fight : MonoBehaviour
 {
     public ObjectsControl data;
+    private static Fight instance;
+    public static Fight Instance
+    {
+        get { return instance; }
+    }
 
     public int attackNumber ;               //本回合攻击次数
     private float HP;                                     // 生命值
@@ -28,8 +33,9 @@ public class Fight : MonoBehaviour
     public int attack ;                               // 攻击力
     public int defense ;                            // 防御力
     private List<GameObject> enemy=new List<GameObject>();    //敌人的列表
-    private void Awake()
+    private void Start()
     {
+        instance = this;
         //初始化攻击次数
         attackNumber = data.cardData.maxAttackNumber;
         //初始化生命值
@@ -50,9 +56,9 @@ public class Fight : MonoBehaviour
         enemy.Clear();
         for (int i = 1; i <= data.cardData.attackDistance; i++)
         {
-            // if(StaticGround.grounds[data.row - i, data.column].GetComponent<Ground>().objectControl!=null)
+            // if(StaticGround.Instance.grounds[data.row - i, data.column].GetComponent<Ground>().objectControl!=null)
             // {
-            //     Debug.Log(StaticGround.grounds[data.row - i, data.column].GetComponent<Ground>().objectControl.tag);
+            //     Debug.Log(StaticGround.Instance.grounds[data.row - i, data.column].GetComponent<Ground>().objectControl.tag);
             // }
             // else
             // {
@@ -60,21 +66,21 @@ public class Fight : MonoBehaviour
             // }
             // Debug.Log(data.row - i);
             // Debug.Log(data.column);
-            if(data.row+i<CollectionOfConstants.MapRow&&StaticGround.grounds[data.row+i,data.column].GetComponent<Ground>().objectControl!=null&&StaticGround.grounds[data.row+i,data.column].GetComponent<Ground>().objectControl.tag=="Enemy")
+            if(data.row+i<CollectionOfConstants.MapRow&&StaticGround.Instance.grounds[data.row+i,data.column].GetComponent<Ground>().objectControl!=null&&StaticGround.Instance.grounds[data.row+i,data.column].GetComponent<Ground>().objectControl.tag=="Enemy")
             {
-                enemy.Add(StaticGround.grounds[data.row + i, data.column].GetComponent<Ground>().objectControl);
+                enemy.Add(StaticGround.Instance.grounds[data.row + i, data.column].GetComponent<Ground>().objectControl);
             }
-            if (data.row - i >= 0 && StaticGround.grounds[data.row - i, data.column].GetComponent<Ground>().objectControl != null && StaticGround.grounds[data.row - i, data.column].GetComponent<Ground>().objectControl.tag == "Enemy")
+            if (data.row - i >= 0 && StaticGround.Instance.grounds[data.row - i, data.column].GetComponent<Ground>().objectControl != null && StaticGround.Instance.grounds[data.row - i, data.column].GetComponent<Ground>().objectControl.tag == "Enemy")
             {
-                enemy.Add(StaticGround.grounds[data.row - i, data.column].GetComponent<Ground>().objectControl);
+                enemy.Add(StaticGround.Instance.grounds[data.row - i, data.column].GetComponent<Ground>().objectControl);
             }
-            if (data.column + i < CollectionOfConstants.MapColumn && StaticGround.grounds[data.row, data.column + i].GetComponent<Ground>().objectControl != null && StaticGround.grounds[data.row, data.column + i].GetComponent<Ground>().objectControl.tag == "Enemy")
+            if (data.column + i < CollectionOfConstants.MapColumn && StaticGround.Instance.grounds[data.row, data.column + i].GetComponent<Ground>().objectControl != null && StaticGround.Instance.grounds[data.row, data.column + i].GetComponent<Ground>().objectControl.tag == "Enemy")
             {
-                enemy.Add(StaticGround.grounds[data.row, data.column + i].GetComponent<Ground>().objectControl);
+                enemy.Add(StaticGround.Instance.grounds[data.row, data.column + i].GetComponent<Ground>().objectControl);
             }
-            if (data.column - i >= 0 && StaticGround.grounds[data.row, data.column - i].GetComponent<Ground>().objectControl != null && StaticGround.grounds[data.row, data.column - i].GetComponent<Ground>().objectControl.tag == "Enemy")
+            if (data.column - i >= 0 && StaticGround.Instance.grounds[data.row, data.column - i].GetComponent<Ground>().objectControl != null && StaticGround.Instance.grounds[data.row, data.column - i].GetComponent<Ground>().objectControl.tag == "Enemy")
             {
-                enemy.Add(StaticGround.grounds[data.row, data.column - i].GetComponent<Ground>().objectControl);
+                enemy.Add(StaticGround.Instance.grounds[data.row, data.column - i].GetComponent<Ground>().objectControl);
             }
         }
     }

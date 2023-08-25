@@ -60,8 +60,8 @@ public class CardShow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
         if (Manage.Instance.isAction)
         {
             if (
-                cardData.cost["补给"] > ResourceNumberUI.FoodNumber
-                || cardData.cost["铁矿"] > ResourceNumberUI.IronNumber
+                cardData.cost["补给"] > ResourceNumberUI.Instance.FoodNumber
+                || cardData.cost["铁矿"] > ResourceNumberUI.Instance.IronNumber
             )
             {
                 isAllowDrag = false;
@@ -84,7 +84,7 @@ public class CardShow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
                 //改变颜色为绿色
                 for (int i = 0; i < cardData.counts; i++)
                 {
-                    StaticGround.grounds[cardData.locationRow[i], cardData.locationColumn[i]]
+                    StaticGround.Instance.grounds[cardData.locationRow[i], cardData.locationColumn[i]]
                         .GetComponent<SpriteRenderer>()
                         .color = UnityEngine.Color.green;
                 }
@@ -109,7 +109,7 @@ public class CardShow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
                     {
                         if (
                             hit.collider.gameObject
-                            == StaticGround.grounds[
+                            == StaticGround.Instance.grounds[
                                 cardData.locationRow[i],
                                 cardData.locationColumn[i]
                             ]
@@ -129,13 +129,13 @@ public class CardShow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
                             //更新资源数
                             if (cardData.cost["补给"] != 0)
                             {
-                                ResourceNumberUI.FoodNumber -= cardData.cost["补给"];
+                                ResourceNumberUI.Instance.FoodNumber -= cardData.cost["补给"];
                             }
                             if (cardData.cost["铁矿"] != 0)
                             {
-                                ResourceNumberUI.IronNumber -= cardData.cost["铁矿"];
+                                ResourceNumberUI.Instance.IronNumber -= cardData.cost["铁矿"];
                             }
-                            ResourceNumberUI.updateResourceNumberText();
+                            ResourceNumberUI.Instance.updateResourceNumberText();
                             HandCard.Instance.HandCardCounts--;
 
                             CollectionOfConstants.SuppliesConsumedPerTurn += cardData.perCost["补给"];
@@ -143,7 +143,7 @@ public class CardShow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
 
                             Destroy(this.gameObject);
                         }
-                        StaticGround.grounds[cardData.locationRow[i], cardData.locationColumn[i]]
+                        StaticGround.Instance.grounds[cardData.locationRow[i], cardData.locationColumn[i]]
                             .GetComponent<SpriteRenderer>()
                             .color = UnityEngine.Color.white;
                     }

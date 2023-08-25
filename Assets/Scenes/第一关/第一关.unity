@@ -1829,6 +1829,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae25d5e6f308b0b4eae43eda29e05f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resourceCardCountsLimit: 8
+  resourceCardCountsCurrent: 8
 --- !u!114 &194925076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3462,25 +3464,10 @@ MonoBehaviour:
   resourceCard: []
   notresourceCard:
   - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
-  - {fileID: 994391982313339692, guid: eb31cb7aeaa5ae54aa2a4cf73b57ba20, type: 3}
+  - {fileID: 994391982313339692, guid: 8c1bef603d5513d4da199883998f7333, type: 3}
+  - {fileID: 994391982313339692, guid: d41a1fb1361061447bf110a755520e10, type: 3}
+  - {fileID: 994391982313339692, guid: 83be7fcd2ec18ed4f8c91b9256b20e54, type: 3}
+  - {fileID: 994391982313339692, guid: 8455a07261413ee41a98e3adc525d008, type: 3}
   Canvas: {fileID: 162422443}
   isBegin: 0
   resourcesPerTurnNotEnough: {fileID: 8050236897634329875, guid: e98329a79be6e884ba129504ff7dd148, type: 3}
@@ -16120,6 +16107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14785540ac043c44abe28f6a5f655eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionNumber: 1
+  actionNumberCurrentLimit: 1
 --- !u!1 &1754310264
 GameObject:
   m_ObjectHideFlags: 0

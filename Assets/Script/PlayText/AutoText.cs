@@ -86,7 +86,7 @@ public class AutoText : MonoBehaviour
         }
         continueText.SetActive(true);
         //0.5s后设置button为可交互
-        Invoke("ActiveButton", 0.5f);
+        Invoke("ActiveButton", 0.2f);
     }
 
     /// <summary>

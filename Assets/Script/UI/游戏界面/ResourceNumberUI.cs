@@ -6,8 +6,13 @@ using UnityEngine.UI;
 using TMPro;
 public class ResourceNumberUI : MonoBehaviour
 {
-    private static int foodNumber = CollectionOfConstants.initialFoodNumber;
-    public static int FoodNumber
+    private static ResourceNumberUI instance;
+    public static ResourceNumberUI Instance
+    {
+        get { return instance; }
+    }
+    private int foodNumber = CollectionOfConstants.initialFoodNumber;
+    public int FoodNumber
     {
         get
         {
@@ -23,8 +28,8 @@ public class ResourceNumberUI : MonoBehaviour
         }
     }
 
-    private static int woodNumber = 5;
-    public static int WoodNumber
+    private int woodNumber = 5;
+    public int WoodNumber
     {
         get
         {
@@ -40,8 +45,8 @@ public class ResourceNumberUI : MonoBehaviour
         }
     }
 
-    private static int ironNumber = CollectionOfConstants.initialIronNumber;
-    public static int IronNumber
+    private int ironNumber = CollectionOfConstants.initialIronNumber;
+    public int IronNumber
     {
         get
         {
@@ -57,13 +62,15 @@ public class ResourceNumberUI : MonoBehaviour
         }
     }
 
-    private static TextMeshProUGUI tip;
-    void Awake()
+
+    private TextMeshProUGUI tip;
+    void Start()
     {
         tip = this.GetComponent<TextMeshProUGUI>();
+        instance = this;
         updateResourceNumberText();
     }
-    public static void updateResourceNumberText()
+    public void updateResourceNumberText()
     {
         tip.text = "补给:" + foodNumber.ToString() +  "\n铁矿:" + ironNumber.ToString();
     }

@@ -29,13 +29,13 @@ public class DrawResourceCardButton : MonoBehaviour
         HandCard.Instance.HandCardCounts++;
         //移除卡牌
         Manage.Instance.resourceCard.RemoveAt(Manage.Instance.resourceCard.Count - 1);
-        DrawCardCountsUI.resourceCardCountsCurrent--;
-        DrawCardCountsUI.updateResourceCardCountsText();
+        DrawCardCountsUI.Instance.resourceCardCountsCurrent--;
+        DrawCardCountsUI.Instance.updateResourceCardCountsText();
         if (CheckIsNull(Manage.Instance.resourceCard.Count))                                                             //如果卡牌数为0，将按钮设置为不可用
         {
             this.GetComponent<Button>().interactable = false;
         }
-        if (DrawCardCountsUI.resourceCardCountsCurrent == 0)                                                   //如果抽卡数为0，进入行动阶段
+        if (DrawCardCountsUI.Instance.resourceCardCountsCurrent == 0)                                                   //如果抽卡数为0，进入行动阶段
         {
             Finish();
         }
@@ -60,13 +60,13 @@ public class DrawResourceCardButton : MonoBehaviour
         HandCard.Instance.HandCardCounts++;
         //移除卡牌
         Manage.Instance.notresourceCard.RemoveAt(Manage.Instance.notresourceCard.Count - 1);
-        DrawCardCountsUI.resourceCardCountsCurrent--;
-        DrawCardCountsUI.updateResourceCardCountsText();
+        DrawCardCountsUI.Instance.resourceCardCountsCurrent--;
+        DrawCardCountsUI.Instance.updateResourceCardCountsText();
         if (CheckIsNull(Manage.Instance.notresourceCard.Count))
         {
             this.GetComponent<Button>().interactable = false;
         }
-        if (DrawCardCountsUI.resourceCardCountsCurrent == 0)
+        if (DrawCardCountsUI.Instance.resourceCardCountsCurrent == 0)
         {
             Finish();
         }

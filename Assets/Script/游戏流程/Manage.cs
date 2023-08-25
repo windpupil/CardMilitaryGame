@@ -70,7 +70,10 @@ public class Manage : MonoBehaviour
         //遍历所有资源点，将资源点的资源数加到资源UI上
         for (int i = 0; i < resourcePoints.Count; i++)
         {
-            resourcePoints[i].GetComponent<ResourceGround>().AddResource();
+            if (resourcePoints[i] != null)
+            {
+                resourcePoints[i].GetComponent<ResourceGround>().AddResource();
+            }
         }
 
         if (CollectionOfConstants.isEnough())
@@ -116,8 +119,11 @@ public class Manage : MonoBehaviour
         }
         //打开抽卡界面
         UIDraw.SetActive(true);
-        DrawCardCountsUI.resourceCardCountsCurrent = DrawCardCountsUI.resourceCardCountsLimit;
-        DrawCardCountsUI.updateResourceCardCountsText();
+        if(DrawCardCountsUI.Instance!=null)
+        {
+            DrawCardCountsUI.Instance.UpdateCounts();
+            DrawCardCountsUI.Instance.updateResourceCardCountsText();
+        }
     }
 
     /// <summary>
@@ -148,8 +154,8 @@ public class Manage : MonoBehaviour
         isAction = false;
         isEnd = true;
         rounds++;
-        StaticGround.updateObjectsControlRealDistance(); //更新物体的realDistance
-        StaticGround.updateSoldierAttackNumber(); //更新物体的attackNumber
+        StaticGround.Instance.updateObjectsControlRealDistance(); //更新物体的realDistance
+        StaticGround.Instance.updateSoldierAttackNumber(); //更新物体的attackNumber
 
         //检测handCard的子物体数量是否大于10
         if (HandCard.Instance.HandCardCounts > CollectionOfConstants.HandCardLimit)
@@ -168,19 +174,19 @@ public class Manage : MonoBehaviour
     public void resourceDecisionEnd()
     {
         Debug.Log("资源决策阶段结束");
-        ResourceNumberUI.FoodNumber -= CollectionOfConstants.SuppliesConsumedPerTurn;
-        ResourceNumberUI.IronNumber -= CollectionOfConstants.IronConsumedPerTurn;
-        ResourceNumberUI.updateResourceNumberText();
-        //行动点数恢复
+        ResourceNumberUI.Instance.FoodNumber -= CollectionOfConstants.SuppliesConsumedPerTurn;
+        ResourceNumberUI.Instance.IronNumber -= CollectionOfConstants.IronConsumedPerTurn;
+        ResourceNumberUI.Instance.updateResourceNumberText();
         if (
-            ActionNumberUI.actionNumberLimit >= ActionNumberUI.actionNumberCurrentLimit
+            CollectionOfConstants.actionNumberLimit
+                >= ActionNumberUI.Instance.actionNumberCurrentLimit
             && rounds != 1
         )
         {
-            ActionNumberUI.actionNumberCurrentLimit++;
+            ActionNumberUI.Instance.actionNumberCurrentLimit++;
         }
-        ActionNumberUI.actionNumber = ActionNumberUI.actionNumberCurrentLimit;
-        ActionNumberUI.updateActionNumberText();
+        ActionNumberUI.Instance.actionNumber = ActionNumberUI.Instance.actionNumberCurrentLimit;
+        ActionNumberUI.Instance.updateActionNumberText();
         isBegin = false;
         //抽卡
         Draw();

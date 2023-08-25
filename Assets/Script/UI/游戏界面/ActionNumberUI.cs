@@ -7,15 +7,23 @@ using TMPro;
 
 public class ActionNumberUI : MonoBehaviour
 {
-    public const int actionNumberLimit = 10;                //行动点最大上限
-    public static int actionNumber = 1;              //行动点
-    private static TextMeshProUGUI tip;
-    public static int actionNumberCurrentLimit = 1;  //行动点当前上限
-    void Awake()
+    
+    public int actionNumber = 1;              //行动点
+    private TextMeshProUGUI tip;
+    public int actionNumberCurrentLimit = 1;  //行动点当前上限
+    private static ActionNumberUI instance;
+    public static ActionNumberUI Instance
     {
+        get{
+            return instance;
+        }
+    }
+    void Start()
+    {
+        instance=this;
         tip = this.GetComponent<TextMeshProUGUI>();
     }
-    public static void updateActionNumberText()
+    public void updateActionNumberText()
     {
         tip.text = "本回合行动点还剩:"+actionNumber.ToString();
     }

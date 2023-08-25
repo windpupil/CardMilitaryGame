@@ -10,10 +10,7 @@ public class ResourceGround : Ground
     public int resourceNumber;  //资源数
     public string resourceType;    //资源类型
 
-    /// <summary>
-    /// Awake is called when the script instance is being loaded.
-    /// </summary>
-    void Awake()
+    void Start()
     {
         Manage.resourcePoints.Add(this.gameObject);
     }
@@ -23,13 +20,13 @@ public class ResourceGround : Ground
         {
             if (resourceType == "补给")
             {
-                ResourceNumberUI.FoodNumber += resourceNumber;
+                ResourceNumberUI.Instance.FoodNumber += resourceNumber;
             }
             else if (resourceType == "铁矿")
             {
-                ResourceNumberUI.IronNumber += resourceNumber;
+                ResourceNumberUI.Instance.IronNumber += resourceNumber;
             }
-            ResourceNumberUI.updateResourceNumberText();
+            ResourceNumberUI.Instance.updateResourceNumberText();
         }
     }
 }

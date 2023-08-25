@@ -8,11 +8,16 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     public SoldierCardData cardData;
-    public int row;                        // 行
-    public int column;                     // 列
+    private static Enemy instance;
+    public static Enemy Instance
+    {
+        get { return instance; }
+    }
+    public int row; // 行
+    public int column; // 列
 
-    public int attackNumber ;               //本回合攻击次数
-    private float HP;                                     // 生命值
+    public int attackNumber; //本回合攻击次数
+    private float HP; // 生命值
     public float hp
     {
         get { return HP; }
@@ -28,13 +33,16 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-    public int attack ;                               // 攻击力
-    public int defense ;                            // 防御力
+    public int attack; // 攻击力
+    public int defense; // 防御力
 
     [SerializeField]
-    private Image HealthBar;                    // 血条
-    private void Awake()
+    private Image HealthBar; // 血条
+
+
+    private void Start()
     {
+        instance = this;
         //初始化攻击次数
         attackNumber = cardData.maxAttackNumber;
         //初始化生命值
@@ -43,13 +51,10 @@ public class Enemy : MonoBehaviour
         attack = cardData.attack;
         //初始化防御力
         defense = cardData.defense;
-    }
-
-    private void Start() {
         HealthBar.transform.position = Camera.main.WorldToScreenPoint(this.transform.position);
     }
 
-    public bool isAttacking = true;   //是否是攻击状态
+    public bool isAttacking = true; //是否是攻击状态
 
     /// <summary>
     /// 受伤
@@ -58,28 +63,28 @@ public class Enemy : MonoBehaviour
     {
         if (enemy.isAttacking)
         {
-            updateHP(computeDamageInAttack(enemy.defense,this.attack));
+            updateHP(computeDamageInAttack(enemy.defense, this.attack));
         }
         else
         {
-            updateHP(computeDamageInDefense(enemy.defense,this.attack));
+            updateHP(computeDamageInDefense(enemy.defense, this.attack));
         }
     }
 
     ///<summary>
     ///计算对方处于防御状态时的伤害数值
     ///<summary>
-    public float computeDamageInDefense(int defense,int attack)
+    public float computeDamageInDefense(int defense, int attack)
     {
-        return attack*attack/(attack+(float)4.5*defense);
+        return attack * attack / (attack + (float)4.5 * defense);
     }
 
     ///<summary>
     ///计算对方处于攻击状态时的伤害数值
     ///<summary>
-    public float computeDamageInAttack(int defense,int attack)
+    public float computeDamageInAttack(int defense, int attack)
     {
-        return attack*attack/(attack+2.0f*defense);
+        return attack * attack / (attack + 2.0f * defense);
     }
 
     /// <summary>
@@ -94,8 +99,10 @@ public class Enemy : MonoBehaviour
         if (hp <= 0)
         {
             //将格子状态改为无人
-            StaticGround.grounds[row, column].GetComponent<Ground>().isHaveObject = false;
-            StaticGround.grounds[row, column].GetComponent<Ground>().objectControl = null;
+            StaticGround.Instance.grounds[row, column]
+                .GetComponent<Ground>()
+                .isHaveObject = false;
+            StaticGround.Instance.grounds[row, column].GetComponent<Ground>().objectControl = null;
             //死亡
             Destroy(this.gameObject);
         }

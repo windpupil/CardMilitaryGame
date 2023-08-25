@@ -18,21 +18,21 @@ public class Ground : MonoBehaviour
         {
             //当格子被点击后，物体移动到这个格子上
             //将格子变成原来的颜色
-            StaticGround.updateGroundsColor();
+            StaticGround.Instance.updateGroundsColor();
             //将物体的对象赋值到这个格子上
             objectControl=possibleFootholds;
             isHaveObject = true;
             //将物体原来所在的位置更新为没有物体
-            StaticGround.grounds[possibleFootholds.GetComponent<ObjectsControl>().row, possibleFootholds.GetComponent<ObjectsControl>().column].GetComponent<Ground>().isHaveObject = false;
-            StaticGround.grounds[possibleFootholds.GetComponent<ObjectsControl>().row, possibleFootholds.GetComponent<ObjectsControl>().column].GetComponent<Ground>().objectControl = null;
+            StaticGround.Instance.grounds[possibleFootholds.GetComponent<ObjectsControl>().row, possibleFootholds.GetComponent<ObjectsControl>().column].GetComponent<Ground>().isHaveObject = false;
+            StaticGround.Instance.grounds[possibleFootholds.GetComponent<ObjectsControl>().row, possibleFootholds.GetComponent<ObjectsControl>().column].GetComponent<Ground>().objectControl = null;
             //将物体移动到这个格子上
             possibleFootholds.transform.position = this.transform.position;
             //将物体的行列数改变
             possibleFootholds.GetComponent<ObjectsControl>().row = row;
             possibleFootholds.GetComponent<ObjectsControl>().column = column;
             //行动点-1
-            ActionNumberUI.actionNumber--;
-            ActionNumberUI.updateActionNumberText();
+            ActionNumberUI.Instance.actionNumber--;
+            ActionNumberUI.Instance.updateActionNumberText();
             //distance减去相应的步数
             possibleFootholds.GetComponent<ObjectsControl>().realDistance -= Steps;
         }
