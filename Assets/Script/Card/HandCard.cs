@@ -37,7 +37,7 @@ public class HandCard : MonoBehaviour
             }
             if (Manage.Instance.isEnd && handCardCounts <= CollectionOfConstants.HandCardLimit)
             {
-                Manage.Instance.Begin();
+                Manage.Instance.End();
             }
         }
     }

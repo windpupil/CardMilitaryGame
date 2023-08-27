@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 994391981200998827}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: "\u653B\u51FB"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &994391981335160680
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: 0ebf6d46849b9ba4db23a86674a70ab5, type: 2}
   tipResource: {fileID: 8571926888338205206, guid: 2eacec079e3caa448aee1c08a8338836, type: 3}
+  leftShowCard: {fileID: 0}
 --- !u!114 &8729235945428497827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 994391981567389724}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: "\u8DDD\u79BB"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +197,7 @@ GameObject:
   - component: {fileID: 994391981568714408}
   - component: {fileID: 994391981568714410}
   - component: {fileID: 994391981568714411}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 994391981754531620}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: "\u8840\u91CF"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 994391981758877587}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: "\u7C7B\u578B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 994391981834787872}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: "\u5C5E\u6027"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +509,7 @@ GameObject:
   - component: {fileID: 994391981909442626}
   - component: {fileID: 994391981909443004}
   - component: {fileID: 994391981909443005}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -774,7 +775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 994391982223523280}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: "\u9632\u5FA1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -806,7 +807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7195498997392158347}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: "\u6301\u76FE\u7279\u8B66"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +832,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -122, y: -110.9}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &994391982321437903
@@ -845,7 +846,7 @@ GameObject:
   - component: {fileID: 994391982321437902}
   - component: {fileID: 994391982321437896}
   - component: {fileID: 994391982321437897}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1113,7 +1114,7 @@ GameObject:
   - component: {fileID: 994391982478208401}
   - component: {fileID: 994391982478208403}
   - component: {fileID: 994391982478208400}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1247,7 +1248,7 @@ GameObject:
   - component: {fileID: 994391982487672727}
   - component: {fileID: 994391982487672721}
   - component: {fileID: 994391982487672726}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1379,7 +1380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 994391982805096413}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: "\u82B1\u8D39"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1413,7 +1414,7 @@ GameObject:
   - component: {fileID: 994391982989107929}
   - component: {fileID: 994391982989107931}
   - component: {fileID: 994391982989107928}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

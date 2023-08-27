@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class CardShow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class CardShow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerExitHandler,IPointerEnterHandler
 {
     public SoldierCardData cardData; // 卡牌数据
     private bool isAllowDrag = true; // 是否允许拖拽
@@ -160,5 +160,14 @@ public class CardShow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
                 Destroy(this.gameObject);
             }
         }
+    }
+    [Tooltip("本变量用于存放左侧展示卡牌")]
+    [SerializeField]
+    private GameObject leftShowCard;
+    public void OnPointerEnter(PointerEventData eventData){
+        leftShowCard.SetActive(true);
+    }
+    public void OnPointerExit(PointerEventData eventData){
+        leftShowCard.SetActive(false);
     }
 }

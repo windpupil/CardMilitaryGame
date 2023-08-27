@@ -25,8 +25,7 @@ public class DrawResourceCardButton : MonoBehaviour
     {
         //生成卡牌
         GameObject card = Instantiate(Manage.Instance.resourceCard[Manage.Instance.resourceCard.Count - 1], this.transform.position, Quaternion.identity);
-        card.transform.SetParent(HandCard.Instance.transform);
-        HandCard.Instance.HandCardCounts++;
+        // card.transform.SetParent(GameObject.Find("Canvas").transform);
         //移除卡牌
         Manage.Instance.resourceCard.RemoveAt(Manage.Instance.resourceCard.Count - 1);
         DrawCardCountsUI.Instance.resourceCardCountsCurrent--;

@@ -119,7 +119,7 @@ public class Manage : MonoBehaviour
         }
         //打开抽卡界面
         UIDraw.SetActive(true);
-        if(DrawCardCountsUI.Instance!=null)
+        if (DrawCardCountsUI.Instance != null)
         {
             DrawCardCountsUI.Instance.UpdateCounts();
             DrawCardCountsUI.Instance.updateResourceCardCountsText();
@@ -150,13 +150,6 @@ public class Manage : MonoBehaviour
     /// </summary>
     public void End()
     {
-        Debug.Log("游戏结算阶段开始");
-        isAction = false;
-        isEnd = true;
-        rounds++;
-        StaticGround.Instance.updateObjectsControlRealDistance(); //更新物体的realDistance
-        StaticGround.Instance.updateSoldierAttackNumber(); //更新物体的attackNumber
-
         //检测handCard的子物体数量是否大于10
         if (HandCard.Instance.HandCardCounts > CollectionOfConstants.HandCardLimit)
         {
@@ -167,6 +160,12 @@ public class Manage : MonoBehaviour
         }
         else
         {
+            Debug.Log("游戏结算阶段开始");
+            isAction = false;
+            isEnd = true;
+            rounds++;
+            StaticGround.Instance.updateObjectsControlRealDistance(); //更新物体的realDistance
+            StaticGround.Instance.updateSoldierAttackNumber(); //更新物体的attackNumber
             Begin();
         }
     }
