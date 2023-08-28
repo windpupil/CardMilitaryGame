@@ -33,11 +33,11 @@ public class Initialize : MonoBehaviour
             for (int j = 0; j < columns; j++)
             {
                 // 实例化正方形
-                if(i==0&&j==5)
+                if(i==0&&j==3)
                 {
                     square = Instantiate(blueGroundPrefab);
                 }
-                else if(i==8&&j==5)
+                else if(i==8&&j==3)
                 {
                     square = Instantiate(redGroundPrefab);
                 }

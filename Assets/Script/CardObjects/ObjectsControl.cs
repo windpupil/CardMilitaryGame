@@ -14,7 +14,7 @@ public class ObjectsControl : MonoBehaviour
         get { return instance; }
     }
     public const int MainCityRow = 8;
-    public const int MainCityColumn = 5;
+    public const int MainCityColumn = 3;
     public SoldierCardData cardData;
     public int row; // 行
     public int column; // 列
@@ -59,6 +59,9 @@ public class ObjectsControl : MonoBehaviour
                             row + i < CollectionOfConstants.MapRow
                             && column + j < CollectionOfConstants.MapColumn
                             && !(row + i == MainCityRow && column + j == MainCityColumn)
+                            && !StaticGround.Instance.grounds[row + i, column + j]
+                                .GetComponent<Ground>()
+                                .isHaveObject
                         )
                         {
                             StaticGround.Instance.grounds[row + i, column + j]
@@ -67,8 +70,9 @@ public class ObjectsControl : MonoBehaviour
                             StaticGround.Instance.grounds[row + i, column + j]
                                 .GetComponent<Ground>()
                                 .isActive = true;
-                            StaticGround.Instance.grounds[row + i, column + j].GetComponent<Ground>().Steps =
-                                i + j;
+                            StaticGround.Instance.grounds[row + i, column + j]
+                                .GetComponent<Ground>()
+                                .Steps = i + j;
                             StaticGround.Instance.grounds[row + i, column + j]
                                 .GetComponent<Ground>()
                                 .possibleFootholds = this.gameObject;
@@ -77,6 +81,9 @@ public class ObjectsControl : MonoBehaviour
                             row - i >= 0
                             && column + j < CollectionOfConstants.MapColumn
                             && !(row - i == MainCityRow && column + j == MainCityColumn)
+                            && !StaticGround.Instance.grounds[row - i, column + j]
+                                .GetComponent<Ground>()
+                                .isHaveObject
                         )
                         {
                             StaticGround.Instance.grounds[row - i, column + j]
@@ -85,8 +92,9 @@ public class ObjectsControl : MonoBehaviour
                             StaticGround.Instance.grounds[row - i, column + j]
                                 .GetComponent<Ground>()
                                 .isActive = true;
-                            StaticGround.Instance.grounds[row - i, column + j].GetComponent<Ground>().Steps =
-                                i + j;
+                            StaticGround.Instance.grounds[row - i, column + j]
+                                .GetComponent<Ground>()
+                                .Steps = i + j;
                             StaticGround.Instance.grounds[row - i, column + j]
                                 .GetComponent<Ground>()
                                 .possibleFootholds = this.gameObject;
@@ -95,6 +103,9 @@ public class ObjectsControl : MonoBehaviour
                             row + i < CollectionOfConstants.MapRow
                             && column - j >= 0
                             && !(row + i == MainCityRow && column - j == MainCityColumn)
+                            && !StaticGround.Instance.grounds[row + i, column - j]
+                                .GetComponent<Ground>()
+                                .isHaveObject
                         )
                         {
                             StaticGround.Instance.grounds[row + i, column - j]
@@ -103,8 +114,9 @@ public class ObjectsControl : MonoBehaviour
                             StaticGround.Instance.grounds[row + i, column - j]
                                 .GetComponent<Ground>()
                                 .isActive = true;
-                            StaticGround.Instance.grounds[row + i, column - j].GetComponent<Ground>().Steps =
-                                i + j;
+                            StaticGround.Instance.grounds[row + i, column - j]
+                                .GetComponent<Ground>()
+                                .Steps = i + j;
                             StaticGround.Instance.grounds[row + i, column - j]
                                 .GetComponent<Ground>()
                                 .possibleFootholds = this.gameObject;
@@ -113,6 +125,9 @@ public class ObjectsControl : MonoBehaviour
                             row - i >= 0
                             && column - j >= 0
                             && !(row - i == MainCityRow && column - j == MainCityColumn)
+                            && !StaticGround.Instance.grounds[row - i, column - j]
+                                .GetComponent<Ground>()
+                                .isHaveObject
                         )
                         {
                             StaticGround.Instance.grounds[row - i, column - j]
@@ -121,8 +136,9 @@ public class ObjectsControl : MonoBehaviour
                             StaticGround.Instance.grounds[row - i, column - j]
                                 .GetComponent<Ground>()
                                 .isActive = true;
-                            StaticGround.Instance.grounds[row - i, column - j].GetComponent<Ground>().Steps =
-                                i + j;
+                            StaticGround.Instance.grounds[row - i, column - j]
+                                .GetComponent<Ground>()
+                                .Steps = i + j;
                             StaticGround.Instance.grounds[row - i, column - j]
                                 .GetComponent<Ground>()
                                 .possibleFootholds = this.gameObject;

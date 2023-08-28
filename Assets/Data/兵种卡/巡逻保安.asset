@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: "\u5DE1\u903B\u4FDD\u5B89"
   cardDescription: 
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 0e1cbfe5d3642414d93fbaa691176148, type: 3}
   cardType: "\u5175\u79CD\u5361"
   cost:
     _serializedList:
@@ -31,7 +31,7 @@ MonoBehaviour:
   gameObject: {fileID: 6695698467338365989, guid: 25339250a2697ee4589eb55bc6324089, type: 3}
   counts: 3
   locationRow: 080000000700000008000000
-  locationColumn: 040000000500000006000000
+  locationColumn: 020000000300000004000000
   attack: 20
   defense: 20
   Health: 10
