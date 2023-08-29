@@ -47,7 +47,7 @@ public class ObjectsControl : MonoBehaviour
     {
         //当物体被点击后，物体通过cardData中的distance来判断哪些格子可以到达
         //将所有可以到达的格子变成绿色
-        if (ActionNumberUI.Instance.actionNumber != 0)
+        if (ActionNumberUI.Instance.actionNumber != 0&& Manage.Instance.isAction)
         {
             for (int i = 0; i <= realDistance; i++)
             {

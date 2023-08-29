@@ -7,5 +7,6 @@ public class FinishButton : MonoBehaviour
     public void Finish()
     {
         Manage.Instance.End();
+        StaticGround.Instance.updateGroundsColor();
     }
 }

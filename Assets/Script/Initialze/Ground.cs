@@ -14,7 +14,7 @@ public class Ground : MonoBehaviour
     public int Steps;            //步数
     private void OnMouseDown()
     {
-        if (isActive)
+        if (isActive&&Manage.Instance.isAction)
         {
             //当格子被点击后，物体移动到这个格子上
             //将格子变成原来的颜色

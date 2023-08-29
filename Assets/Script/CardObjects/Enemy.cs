@@ -107,4 +107,11 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    /// <summary>
+    /// 本函数用于改变攻击状态
+    /// </summary>
+    public void ChangeState()
+    {
+        isAttacking = !isAttacking;
+    }
 }

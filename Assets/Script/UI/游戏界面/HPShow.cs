@@ -12,6 +12,7 @@ public class HPShow : MonoBehaviour
     [SerializeField]
     private Canvas canvas;
 
+
     private Vector3 ptWorld;
 
     private void Start()

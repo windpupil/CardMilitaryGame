@@ -15,10 +15,21 @@ public class Manage : MonoBehaviour
 
     [Tooltip("本变量用于存放所有非资源卡牌")]
     public List<GameObject> notresourceCard = new List<GameObject>();
-    public static int rounds = 1; //回合数
-
-    [Tooltip("本变量用于存放Canvas")]
-    public Transform Canvas; //Canvas
+    private int rounds = 1; //回合数
+    public int Rounds
+    {
+        get { return rounds; }
+        set
+        {
+            if (value != rounds)
+            {
+                StaticGround.Instance.updateSoldierStateButton();
+                rounds = value;
+            }
+        }
+    }
+        [Tooltip("本变量用于存放Canvas")]
+        public Transform Canvas; //Canvas
 
     private static Manage instance;
     public static Manage Instance
@@ -163,7 +174,7 @@ public class Manage : MonoBehaviour
             Debug.Log("游戏结算阶段开始");
             isAction = false;
             isEnd = true;
-            rounds++;
+            Rounds++;
             StaticGround.Instance.updateObjectsControlRealDistance(); //更新物体的realDistance
             StaticGround.Instance.updateSoldierAttackNumber(); //更新物体的attackNumber
             Begin();
@@ -179,7 +190,7 @@ public class Manage : MonoBehaviour
         if (
             CollectionOfConstants.actionNumberLimit
                 >= ActionNumberUI.Instance.actionNumberCurrentLimit
-            && rounds != 1
+            && Rounds != 1
         )
         {
             ActionNumberUI.Instance.actionNumberCurrentLimit++;

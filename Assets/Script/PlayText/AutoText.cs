@@ -110,7 +110,7 @@ public class AutoText : MonoBehaviour
         }
     }
     /// <summary>
-    /// 按钮事件
+    /// 按钮事件，销毁整个对象
     /// </summary>
     public void Click()
     {
@@ -123,5 +123,10 @@ public class AutoText : MonoBehaviour
     public void ActiveButton()
     {
         button.interactable = true;
+    }
+
+    public void JumpScene()
+    {
+        SceneController.GoToSceneByName("开始界面");
     }
 }

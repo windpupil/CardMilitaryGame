@@ -124,27 +124,13 @@ public class CardShow
                     bool isUse = false;
                     for (int i = 0; i < cardData.counts; i++)
                     {
-                        if (
-                            hit.collider.gameObject
-                            == StaticGround.Instance.grounds[
-                                cardData.locationRow[i],
-                                cardData.locationColumn[i]
-                            ]&& (hit.collider.gameObject.GetComponent<Ground>().isHaveObject
-                                        == false)
-                        )
+                        if (hit.collider.gameObject == StaticGround.Instance.grounds[cardData.locationRow[i], cardData.locationColumn[i]] && (hit.collider.gameObject.GetComponent<Ground>().isHaveObject == false))
                         {
                             isUse = true;
-                            GameObject newGameObject = GameObject.Instantiate(
-                                cardData.gameObject,
-                                hit.collider.gameObject.transform.position,
-                                Quaternion.identity
-                            );
+                            GameObject newGameObject = GameObject.Instantiate(cardData.gameObject, hit.collider.gameObject.transform.position, Quaternion.identity);
                             newGameObject.GetComponent<ObjectsControl>().cardData = cardData;
-                            newGameObject.GetComponent<ObjectsControl>().row = cardData.locationRow[
-                                i
-                            ];
-                            newGameObject.GetComponent<ObjectsControl>().column =
-                                cardData.locationColumn[i];
+                            newGameObject.GetComponent<ObjectsControl>().row = cardData.locationRow[i];
+                            newGameObject.GetComponent<ObjectsControl>().column = cardData.locationColumn[i];
                             //更新资源数
                             if (cardData.cost["补给"] != 0)
                             {
@@ -160,19 +146,9 @@ public class CardShow
                             CollectionOfConstants.SuppliesConsumedPerTurn += cardData.perCost["补给"];
                             CollectionOfConstants.IronConsumedPerTurn += cardData.perCost["铁矿"];
                             //将该格的isHaveObject变为true
-                            StaticGround.Instance.grounds[
-                                cardData.locationRow[i],
-                                cardData.locationColumn[i]
-                            ]
-                                .GetComponent<Ground>()
-                                .isHaveObject = true;
+                            StaticGround.Instance.grounds[cardData.locationRow[i], cardData.locationColumn[i]].GetComponent<Ground>().isHaveObject = true;
                             //将该格的objectControl变为该物体
-                            StaticGround.Instance.grounds[
-                                cardData.locationRow[i],
-                                cardData.locationColumn[i]
-                            ]
-                                .GetComponent<Ground>()
-                                .objectControl = newGameObject;
+                            StaticGround.Instance.grounds[cardData.locationRow[i], cardData.locationColumn[i]].GetComponent<Ground>().objectControl = newGameObject;
                             //删除该物体的父物体
                             Destroy(this.transform.parent.gameObject);
                         }

@@ -11,7 +11,7 @@ public static class CollectionOfConstants
 
     public const int HandCardLimit = 10; // 手牌上限
     public const int actionNumberLimit = 10;                //行动点最大上限
-
+    public const int MainCityHP = 100; // 主城血量
     private static int suppliesConsumedPerTurn = 0; // 每回合消耗补给数
     public static int SuppliesConsumedPerTurn
     {

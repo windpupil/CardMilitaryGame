@@ -33,6 +33,14 @@ public class Fight : MonoBehaviour
     public int attack ;                               // 攻击力
     public int defense ;                            // 防御力
     private List<GameObject> enemy=new List<GameObject>();    //敌人的列表
+    /// <summary>
+    /// 本函数用于改变攻击状态
+    /// </summary>
+    public void ChangeState()
+    {
+        isAttacking = !isAttacking;
+        Debug.Log(IsAllowAttack());
+    }
     private void Start()
     {
         instance = this;
@@ -56,16 +64,6 @@ public class Fight : MonoBehaviour
         enemy.Clear();
         for (int i = 1; i <= data.cardData.attackDistance; i++)
         {
-            // if(StaticGround.Instance.grounds[data.row - i, data.column].GetComponent<Ground>().objectControl!=null)
-            // {
-            //     Debug.Log(StaticGround.Instance.grounds[data.row - i, data.column].GetComponent<Ground>().objectControl.tag);
-            // }
-            // else
-            // {
-            //     Debug.Log("null");
-            // }
-            // Debug.Log(data.row - i);
-            // Debug.Log(data.column);
             if(data.row+i<CollectionOfConstants.MapRow&&StaticGround.Instance.grounds[data.row+i,data.column].GetComponent<Ground>().objectControl!=null&&StaticGround.Instance.grounds[data.row+i,data.column].GetComponent<Ground>().objectControl.tag=="Enemy")
             {
                 enemy.Add(StaticGround.Instance.grounds[data.row + i, data.column].GetComponent<Ground>().objectControl);
@@ -141,10 +139,8 @@ public class Fight : MonoBehaviour
         hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
     }
     private void OnMouseUp() {
-        if (isAttacking&&(attackNumber>0))
+        if (IsAllowAttack())
         {
-            // Debug.Log(hit.collider.gameObject.name);
-            // Debug.Log(enemy.Count);
             if (hit.collider != null)
             {
                 for (int i = 0; i < enemy.Count; i++)

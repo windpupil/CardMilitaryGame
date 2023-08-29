@@ -6,10 +6,7 @@ public class StaticGround : MonoBehaviour
 {
     [Tooltip("本变量用于存放地图区域")]
     [HideInInspector]
-    public GameObject[,] grounds = new GameObject[
-        CollectionOfConstants.MapRow,
-        CollectionOfConstants.MapColumn
-    ]; // 地图区域
+    public GameObject[,] grounds = new GameObject[CollectionOfConstants.MapRow,CollectionOfConstants.MapColumn]; // 地图区域
     private static StaticGround instance;
     public static StaticGround Instance
     {
@@ -24,9 +21,7 @@ public class StaticGround : MonoBehaviour
         {
             for (int j = 0; j < CollectionOfConstants.MapColumn; j++)
             {
-                grounds[i, j] = this.transform
-                    .GetChild(i * CollectionOfConstants.MapColumn + j)
-                    .gameObject;
+                grounds[i, j] = this.transform.GetChild(i * CollectionOfConstants.MapColumn + j).gameObject;
                 grounds[i, j].GetComponent<Ground>().row = i;
                 grounds[i, j].GetComponent<Ground>().column = j;
             }
@@ -60,9 +55,7 @@ public class StaticGround : MonoBehaviour
                 {
                     if (grounds[i, j].tag == "Grounds")
                     {
-                        grounds[i, j].GetComponent<SpriteRenderer>().color = UnityEngine
-                            .Color
-                            .white;
+                        grounds[i, j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.white;
                         grounds[i, j].GetComponent<Ground>().isActive = false;
                     }
                 }
@@ -83,18 +76,25 @@ public class StaticGround : MonoBehaviour
         {
             for (int j = 0; j < CollectionOfConstants.MapColumn; j++)
             {
-                if (
-                    grounds[i, j].GetComponent<Ground>().isHaveObject
-                    && grounds[i, j].GetComponent<Ground>().objectControl.tag == "Soldier"
-                )
+                if (grounds[i, j].GetComponent<Ground>().isHaveObject && grounds[i, j].GetComponent<Ground>().objectControl.tag == "Soldier")
                 {
-                    grounds[i, j]
-                        .GetComponent<Ground>()
-                        .objectControl.GetComponent<Fight>()
-                        .attackNumber = grounds[i, j]
-                        .GetComponent<Ground>()
-                        .objectControl.GetComponent<Fight>()
-                        .data.cardData.maxAttackNumber;
+                    grounds[i, j].GetComponent<Ground>().objectControl.GetComponent<Fight>().attackNumber = grounds[i, j].GetComponent<Ground>().objectControl.GetComponent<Fight>().data.cardData.maxAttackNumber;
+                }
+            }
+        }
+    }
+    /// <summary>
+    /// 更新所有格子上士兵的状态按钮
+    /// </summary>
+    public void updateSoldierStateButton()
+    {
+        for (int i = 0; i < CollectionOfConstants.MapRow; i++)
+        {
+            for (int j = 0; j < CollectionOfConstants.MapColumn; j++)
+            {
+                if (grounds[i, j].GetComponent<Ground>().isHaveObject && grounds[i, j].GetComponent<Ground>().objectControl.tag == "Soldier")
+                {
+                    grounds[i, j].GetComponent<Ground>().objectControl.transform.Find("状态转换按钮").GetComponent<StateTransitionButton>().isOn = false;
                 }
             }
         }

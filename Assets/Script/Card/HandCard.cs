@@ -26,7 +26,6 @@ public class HandCard : MonoBehaviour
                 //整理手牌
             }
             handCardCounts = value;
-            Debug.Log("手牌数量：" + handCardCounts);
             if(handCardCounts > CollectionOfConstants.HandCardLimit)
             {
                 isUpperLimit = true;

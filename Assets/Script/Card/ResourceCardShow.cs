@@ -10,7 +10,8 @@ public class ResourceCardShow : MonoBehaviour
     [Tooltip("本变量用于存储资源卡数据")]
     [SerializeField]
     private ResourceCardData resourceCardData;        //定义一个资源卡数据的变量
-    private void Start() {
+    private void Start()
+    {
         ShowCard();
         this.transform.SetParent(GameObject.Find("Canvas").transform);
         this.transform.localPosition = new Vector3(0, 0, 0);
@@ -26,9 +27,10 @@ public class ResourceCardShow : MonoBehaviour
         this.transform.GetChild(1).GetChild(2).GetComponent<TextMeshProUGUI>().text =
             resourceCardData.cardDescription;
     }
-    private void OnDestroy() {
+    private void OnDestroy()
+    {
         ResourceNumberUI.Instance.FoodNumber += resourceCardData.resourceType["补给"];
         ResourceNumberUI.Instance.IronNumber += resourceCardData.resourceType["铁矿"];
         ResourceNumberUI.Instance.updateResourceNumberText();
-}
+    }
 }
