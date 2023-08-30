@@ -1,0 +1,223 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AIBrain : MonoBehaviour
+{
+    private static AIBrain instance;
+    public static AIBrain Instance
+    {
+        get { return instance; }
+    }
+    [Tooltip("本变量用于存放AI占领的资源点")]
+    public List<ResourceGround> resourcePoints = new List<ResourceGround>();
+
+    [Tooltip("本变量用于存放AI所有资源卡牌")]
+    public List<GameObject> resourceCard = new List<GameObject>();
+
+    [Tooltip("本变量用于存放AI所有非资源卡牌")]
+    public List<GameObject> notresourceCard = new List<GameObject>();
+    private int HandCardNum = 0; //手牌数
+    private const int HandCardNumMax = 10; //手牌上限
+    private bool isHavePitfallCard = false; //是否有陷阱卡或者策略卡
+    private int foodNumberAI = 0; //AI的补给数
+    public int FoodNumberAI
+    {
+        get { return foodNumberAI; }
+        set
+        {
+            foodNumberAI = value;
+        }
+    }
+
+    private int ironNumberAI = 0; //AI的铁矿数
+    public int IronNumberAI
+    {
+        get { return ironNumberAI; }
+        set
+        {
+            ironNumberAI = value;
+        }
+    }
+    [HideInInspector]
+    public int perConsumedFood = 0; //每回合消耗的补给数
+    [HideInInspector]
+    public int perConsumedIron = 0; //每回合消耗的铁矿数
+    private List<GameObject> Enemys = new List<GameObject>(); //AI的士兵
+    private void Start()
+    {
+        instance = this;
+        //初始化牌组
+        //打乱resourceCard的顺序
+        for (int i = 0; i < resourceCard.Count; i++)
+        {
+            GameObject temp = resourceCard[i];
+            int randomIndex = Random.Range(i, resourceCard.Count);
+            resourceCard[i] = resourceCard[randomIndex];
+            resourceCard[randomIndex] = temp;
+        }
+        //打乱notresourceCard的顺序
+        for (int i = 0; i < notresourceCard.Count; i++)
+        {
+            GameObject temp = notresourceCard[i];
+            int randomIndex = Random.Range(i, notresourceCard.Count);
+            notresourceCard[i] = notresourceCard[randomIndex];
+            notresourceCard[randomIndex] = temp;
+        }
+        Begin();
+    }
+    /// <summary>
+    /// AI的准备阶段
+    /// </summary>
+    public void Begin()
+    {
+        Debug.Log("AI的准备阶段");
+        //遍历占据的资源点，添加资源储备
+        foreach (ResourceGround resourcePoint in resourcePoints)
+        {
+            if (resourcePoint.GetComponent<Ground>().objectControl.tag == "Enemy")
+            {
+                if (resourcePoint.resourceType == "补给")
+                {
+                    FoodNumberAI += resourcePoint.resourceNumber;
+                }
+                else if (resourcePoint.resourceType == "铁矿")
+                {
+                    IronNumberAI += resourcePoint.resourceNumber;
+                }
+            }
+        }
+        //计算场上已有士兵所需的本回合消耗，若大于已有资源，撤掉消耗补给最少的，直到资源足够
+        while(perConsumedFood>FoodNumberAI)
+        {
+            int minConsumedNumber = 0;
+            //记得在士兵销毁时，加一个 语句撤销每回合消耗
+            //遍历所有enemys，找到消耗补给最少的
+            foreach (GameObject enemy in Enemys)
+            {
+                if (enemy.GetComponent<Enemy>().cardData.perCost["补给"] < Enemys[minConsumedNumber].GetComponent<Enemy>().cardData.perCost["补给"])
+                {
+                    minConsumedNumber = Enemys.IndexOf(enemy);
+                }
+            }
+            //销毁该士兵
+            Destroy(Enemys[minConsumedNumber]);
+        }
+        while(perConsumedIron>IronNumberAI)
+        {
+            int minConsumedNumber = 0;
+            //记得在士兵销毁时，加一个 语句撤销每回合消耗
+            //遍历所有enemys，找到消耗补给最少的
+            foreach (GameObject enemy in Enemys)
+            {
+                if (enemy.GetComponent<Enemy>().cardData.perCost["铁矿"] < Enemys[minConsumedNumber].GetComponent<Enemy>().cardData.perCost["铁矿"])
+                {
+                    minConsumedNumber = Enemys.IndexOf(enemy);
+                }
+            }
+            //销毁该士兵
+            Destroy(Enemys[minConsumedNumber]);
+        }
+        Draw();
+    }
+    private List<GameObject> cards=new List<GameObject>(); //AI的手牌
+    /// <summary>
+    /// AI的抽牌阶段
+    /// </summary>
+    public void Draw()
+    {
+        Debug.Log("AI的抽牌阶段");
+        //抽牌，5张资源，3张主卡
+        for (int i = 0; i < 3; i++)
+        {
+            if(resourceCard.Count>0)
+            {
+                cards.Add(notresourceCard[i]);
+                notresourceCard.RemoveAt(i);
+                HandCardNum++;
+            }
+            else
+            {
+                break;
+            }
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            if (notresourceCard.Count > 0)
+            {
+                foodNumberAI+=notresourceCard[i].GetComponentInChildren<ResourceCardShow>().resourceCardData.resourceType["补给"];
+                ironNumberAI+=notresourceCard[i].GetComponentInChildren<ResourceCardShow>().resourceCardData.resourceType["铁矿"];
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+    /// <summary>
+    /// AI的出牌阶段
+    /// </summary>
+    public void PlayCards()
+    {
+        Debug.Log("AI的出牌阶段");
+        if(HandCardNum!=0)
+        {
+            foreach (GameObject card in cards)
+            {
+                if (card.GetComponentInChildren<Enemy>().cardData.cardType == "陷阱" || card.GetComponentInChildren<Enemy>().cardData.cardType == "策略")
+                {
+                    
+                }
+            }
+        }
+        Action();
+    }
+    /// <summary>
+    /// AI的行动阶段
+    /// </summary>
+    public void Action()
+    {
+        Debug.Log("AI的行动阶段");
+        End();
+    }
+    /// <summary>
+    /// AI的结束阶段
+    /// </summary>
+    public void End()
+    {
+        Debug.Log("AI的结束阶段");
+        //当手牌大于上限时，弃掉手牌
+        while (HandCardNum > HandCardNumMax)
+        {
+            if (isHavePitfallCard)
+            {
+                //弃掉陷阱卡或者策略卡
+                //检测陷阱卡或者策略卡是否还有
+                //遍历cards，找到陷阱卡或者策略卡
+                //销毁该卡
+            }
+            else
+            {
+                int minConsumedNumber = 0;
+                //比较部署所需补给数，丢掉补给数最小的兵种卡
+                foreach (GameObject card in cards)
+                {
+                    if (card.GetComponentInChildren<Enemy>().cardData.cost["补给"] < cards[minConsumedNumber].GetComponentInChildren<Enemy>().cardData.perCost["补给"])
+                    {
+                        minConsumedNumber = cards.IndexOf(card);
+                    }
+                }
+                cards.RemoveAt(minConsumedNumber);
+                HandCardNum--;
+            }
+        }
+        Manage.Instance.Begin();
+    }
+    /// <summary>
+    /// 将卡牌设置到场上
+    /// </summary>
+    public void Set()
+    {
+
+    }
+}

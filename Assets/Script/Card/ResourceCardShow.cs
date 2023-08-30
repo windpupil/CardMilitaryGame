@@ -8,8 +8,7 @@ public class ResourceCardShow : MonoBehaviour
 {
     //本脚本用于挂载在资源卡上以显示资源卡的信息并执行相关操作
     [Tooltip("本变量用于存储资源卡数据")]
-    [SerializeField]
-    private ResourceCardData resourceCardData;        //定义一个资源卡数据的变量
+    public ResourceCardData resourceCardData;        //定义一个资源卡数据的变量
     private void Start()
     {
         ShowCard();

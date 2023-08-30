@@ -12,21 +12,7 @@ public class ResourceGround : Ground
 
     void Start()
     {
-        Manage.resourcePoints.Add(this.gameObject);
-    }
-    public void AddResource()        //将资源点的资源数加到资源UI上
-    {
-        if (isHaveObject)
-        {
-            if (resourceType == "补给")
-            {
-                ResourceNumberUI.Instance.FoodNumber += resourceNumber;
-            }
-            else if (resourceType == "铁矿")
-            {
-                ResourceNumberUI.Instance.IronNumber += resourceNumber;
-            }
-            ResourceNumberUI.Instance.updateResourceNumberText();
-        }
+        Manage.Instance.resourcePoints.Add(this.gameObject.GetComponent<ResourceGround>());
+        AIBrain.Instance.resourcePoints.Add(this.gameObject.GetComponent<ResourceGround>());
     }
 }

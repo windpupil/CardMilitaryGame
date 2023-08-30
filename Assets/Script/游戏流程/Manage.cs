@@ -8,7 +8,7 @@ using UnityEngine;
 public class Manage : MonoBehaviour
 {
     [Tooltip("本变量用于存放所有资源点")]
-    public static List<GameObject> resourcePoints = new List<GameObject>(); //资源点
+    public List<ResourceGround> resourcePoints = new List<ResourceGround>();
 
     [Tooltip("本变量用于存放所有资源卡牌")]
     public List<GameObject> resourceCard = new List<GameObject>();
@@ -79,14 +79,21 @@ public class Manage : MonoBehaviour
         isEnd = false;
         isBegin = true;
         //遍历所有资源点，将资源点的资源数加到资源UI上
-        for (int i = 0; i < resourcePoints.Count; i++)
+        foreach (ResourceGround resourcePoint in resourcePoints)
         {
-            if (resourcePoints[i] != null)
+            if (resourcePoint.GetComponent<Ground>().objectControl.tag == "Soldier")
             {
-                resourcePoints[i].GetComponent<ResourceGround>().AddResource();
+                if (resourcePoint.resourceType == "补给")
+                {
+                    ResourceNumberUI.Instance.FoodNumber += resourcePoint.resourceNumber;
+                }
+                else if (resourcePoint.resourceType == "铁矿")
+                {
+                    ResourceNumberUI.Instance.IronNumber += resourcePoint.resourceNumber;
+                }
             }
         }
-
+        ResourceNumberUI.Instance.updateResourceNumberText();
         if (CollectionOfConstants.isEnough())
         {
             resourceDecisionEnd();
