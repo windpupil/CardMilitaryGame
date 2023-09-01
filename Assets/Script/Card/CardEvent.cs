@@ -122,8 +122,8 @@ public class CardEvent
                             ResourceNumberUI.Instance.updateResourceNumberText();
                             HandCard.Instance.HandCardCounts--;
 
-                            CollectionOfConstants.SuppliesConsumedPerTurn += cardData.perCost["补给"];
-                            CollectionOfConstants.IronConsumedPerTurn += cardData.perCost["铁矿"];
+                            Manage.Instance.SuppliesConsumedPerTurn += cardData.perCost["补给"];
+                            Manage.Instance.IronConsumedPerTurn += cardData.perCost["铁矿"];
 
                             Destroy(this.gameObject);
                         }

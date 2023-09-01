@@ -11,6 +11,14 @@ public class AIBrain : MonoBehaviour
     }
     [Tooltip("本变量用于存放AI占领的资源点")]
     public List<ResourceGround> resourcePoints = new List<ResourceGround>();
+    /// <summary>
+    /// 本方法用于将资源点加入到resourcePoints中
+    /// </summary>
+    /// <param name="resourceGround"></param>
+    public void AddResourceGround(ResourceGround resourceGround)
+    {
+        resourcePoints.Add(resourceGround);
+    }
 
     [Tooltip("本变量用于存放AI所有资源卡牌")]
     public List<GameObject> resourceCard = new List<GameObject>();
@@ -20,7 +28,7 @@ public class AIBrain : MonoBehaviour
     private int HandCardNum = 0; //手牌数
     private const int HandCardNumMax = 10; //手牌上限
     private bool isHavePitfallCard = false; //是否有陷阱卡或者策略卡
-    private int foodNumberAI = 0; //AI的补给数
+    private int foodNumberAI = 10; //AI的补给数
     public int FoodNumberAI
     {
         get { return foodNumberAI; }
@@ -30,7 +38,7 @@ public class AIBrain : MonoBehaviour
         }
     }
 
-    private int ironNumberAI = 0; //AI的铁矿数
+    private int ironNumberAI = 10; //AI的铁矿数
     public int IronNumberAI
     {
         get { return ironNumberAI; }
@@ -44,9 +52,12 @@ public class AIBrain : MonoBehaviour
     [HideInInspector]
     public int perConsumedIron = 0; //每回合消耗的铁矿数
     private List<GameObject> Enemys = new List<GameObject>(); //AI的士兵
-    private void Start()
+    private void Awake()
     {
         instance = this;
+    }
+    private void Start()
+    {
         //初始化牌组
         //打乱resourceCard的顺序
         for (int i = 0; i < resourceCard.Count; i++)
@@ -64,18 +75,18 @@ public class AIBrain : MonoBehaviour
             notresourceCard[i] = notresourceCard[randomIndex];
             notresourceCard[randomIndex] = temp;
         }
-        Begin();
     }
     /// <summary>
     /// AI的准备阶段
     /// </summary>
     public void Begin()
     {
+        Manage.Instance.isEnd = false;
         Debug.Log("AI的准备阶段");
         //遍历占据的资源点，添加资源储备
         foreach (ResourceGround resourcePoint in resourcePoints)
         {
-            if (resourcePoint.GetComponent<Ground>().objectControl.tag == "Enemy")
+            if (resourcePoint.GetComponent<Ground>().objectControl != null && resourcePoint.GetComponent<Ground>().objectControl.tag == "Enemy")
             {
                 if (resourcePoint.resourceType == "补给")
                 {
@@ -88,7 +99,7 @@ public class AIBrain : MonoBehaviour
             }
         }
         //计算场上已有士兵所需的本回合消耗，若大于已有资源，撤掉消耗补给最少的，直到资源足够
-        while(perConsumedFood>FoodNumberAI)
+        while (perConsumedFood > FoodNumberAI)
         {
             int minConsumedNumber = 0;
             //记得在士兵销毁时，加一个 语句撤销每回合消耗
@@ -103,7 +114,7 @@ public class AIBrain : MonoBehaviour
             //销毁该士兵
             Destroy(Enemys[minConsumedNumber]);
         }
-        while(perConsumedIron>IronNumberAI)
+        while (perConsumedIron > IronNumberAI)
         {
             int minConsumedNumber = 0;
             //记得在士兵销毁时，加一个 语句撤销每回合消耗
@@ -120,7 +131,7 @@ public class AIBrain : MonoBehaviour
         }
         Draw();
     }
-    private List<GameObject> cards=new List<GameObject>(); //AI的手牌
+    private List<GameObject> cards = new List<GameObject>(); //AI的手牌
     /// <summary>
     /// AI的抽牌阶段
     /// </summary>
@@ -130,7 +141,7 @@ public class AIBrain : MonoBehaviour
         //抽牌，5张资源，3张主卡
         for (int i = 0; i < 3; i++)
         {
-            if(resourceCard.Count>0)
+            if (notresourceCard.Count > 0)
             {
                 cards.Add(notresourceCard[i]);
                 notresourceCard.RemoveAt(i);
@@ -143,34 +154,58 @@ public class AIBrain : MonoBehaviour
         }
         for (int i = 0; i < 5; i++)
         {
-            if (notresourceCard.Count > 0)
+            if (resourceCard.Count > 0)
             {
-                foodNumberAI+=notresourceCard[i].GetComponentInChildren<ResourceCardShow>().resourceCardData.resourceType["补给"];
-                ironNumberAI+=notresourceCard[i].GetComponentInChildren<ResourceCardShow>().resourceCardData.resourceType["铁矿"];
+                foodNumberAI += resourceCard[i].GetComponentInChildren<ResourceCardShow>().resourceCardData.resourceType["补给"];
+                ironNumberAI += resourceCard[i].GetComponentInChildren<ResourceCardShow>().resourceCardData.resourceType["铁矿"];
+
             }
             else
             {
                 break;
             }
         }
+        PlayCards();
     }
+    [Tooltip("本变量用于存放AI的士兵对应的预制体")]
+    [SerializeField]
+    private GameObject enemyObject; //AI士兵对应的预制体
     /// <summary>
     /// AI的出牌阶段
     /// </summary>
     public void PlayCards()
     {
         Debug.Log("AI的出牌阶段");
-        if(HandCardNum!=0)
+        if (HandCardNum != 0)
         {
             foreach (GameObject card in cards)
             {
-                if (card.GetComponentInChildren<Enemy>().cardData.cardType == "陷阱" || card.GetComponentInChildren<Enemy>().cardData.cardType == "策略")
+                if (card.GetComponent<Enemy>().cardData.cardType == "陷阱" || card.GetComponent<Enemy>().cardData.cardType == "策略")
                 {
-                    
+
+                }
+                else
+                {
+                    //判断资源是否足够
+                    if (foodNumberAI >= card.GetComponent<Enemy>().cardData.cost["补给"] && ironNumberAI >= card.GetComponent<Enemy>().cardData.cost["铁矿"])
+                    {
+                        if (!StaticGround.Instance.grounds[1, 3].GetComponent<Ground>().isHaveObject)
+                        {
+                            Set(enemyObject, 1, 3, card.GetComponent<Enemy>().cardData);
+                        }
+                        else if (!StaticGround.Instance.grounds[0, 2].GetComponent<Ground>().isHaveObject)
+                        {
+                            Set(enemyObject, 0, 2, card.GetComponent<Enemy>().cardData);
+                        }
+                        else if (!StaticGround.Instance.grounds[0, 4].GetComponent<Ground>().isHaveObject)
+                        {
+                            Set(enemyObject, 0, 4, card.GetComponent<Enemy>().cardData);
+                        }
+                    }
                 }
             }
+            Action();
         }
-        Action();
     }
     /// <summary>
     /// AI的行动阶段
@@ -180,6 +215,7 @@ public class AIBrain : MonoBehaviour
         Debug.Log("AI的行动阶段");
         End();
     }
+
     /// <summary>
     /// AI的结束阶段
     /// </summary>
@@ -202,7 +238,7 @@ public class AIBrain : MonoBehaviour
                 //比较部署所需补给数，丢掉补给数最小的兵种卡
                 foreach (GameObject card in cards)
                 {
-                    if (card.GetComponentInChildren<Enemy>().cardData.cost["补给"] < cards[minConsumedNumber].GetComponentInChildren<Enemy>().cardData.perCost["补给"])
+                    if (card.GetComponent<Enemy>().cardData.cost["补给"] < cards[minConsumedNumber].GetComponent<Enemy>().cardData.perCost["补给"])
                     {
                         minConsumedNumber = cards.IndexOf(card);
                     }
@@ -216,8 +252,17 @@ public class AIBrain : MonoBehaviour
     /// <summary>
     /// 将卡牌设置到场上
     /// </summary>
-    public void Set()
+    public void Set(GameObject enemyObject, int rowInput, int columnInput, SoldierCardData soldierCardData)
     {
-
+        GameObject enemy = Instantiate(enemyObject);
+        enemy.GetComponent<Enemy>().Initializ(soldierCardData);
+        enemy.transform.position = StaticGround.Instance.grounds[rowInput, columnInput].transform.position;
+        enemy.GetComponent<Enemy>().row = rowInput;
+        enemy.GetComponent<Enemy>().column = columnInput;
+        Enemys.Add(enemy);
+        foodNumberAI -= enemy.GetComponent<Enemy>().cardData.cost["补给"];
+        ironNumberAI -= enemy.GetComponent<Enemy>().cardData.cost["铁矿"];
+        StaticGround.Instance.grounds[rowInput, columnInput].GetComponent<Ground>().isHaveObject = true;
+        StaticGround.Instance.grounds[rowInput, columnInput].GetComponent<Ground>().objectControl = enemy;
     }
 }

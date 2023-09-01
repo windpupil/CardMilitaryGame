@@ -12,7 +12,7 @@ public class ResourceGround : Ground
 
     void Start()
     {
-        Manage.Instance.resourcePoints.Add(this.gameObject.GetComponent<ResourceGround>());
-        AIBrain.Instance.resourcePoints.Add(this.gameObject.GetComponent<ResourceGround>());
+        Manage.Instance.AddResourceGround(this.GetComponent<ResourceGround>());
+        AIBrain.Instance.AddResourceGround(this.GetComponent<ResourceGround>());
     }
 }

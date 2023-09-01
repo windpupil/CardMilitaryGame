@@ -90,11 +90,11 @@ public class Fight : MonoBehaviour
     {
         if (enemy.isAttacking)
         {
-            enemy.updateHP(computeDamageInAttack(enemy.defense,this.attack));
+            enemy.updateHP(computeDamageInAttack(enemy.cardData.defense,this.attack));
         }
         else
         {
-            enemy.updateHP(computeDamageInDefense(enemy.defense,this.attack));
+            enemy.updateHP(computeDamageInDefense(enemy.cardData.defense,this.attack));
         }
     }
 

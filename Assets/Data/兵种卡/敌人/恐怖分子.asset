@@ -15,11 +15,19 @@ MonoBehaviour:
   cardName: "\u6050\u6016\u5206\u5B50"
   cardDescription: 
   cardImage: {fileID: 0}
-  cardType: 
+  cardType: "\u5175\u79CD"
   cost:
-    _serializedList: []
+    _serializedList:
+    - Key: "\u8865\u7ED9"
+      Value: 2
+    - Key: "\u94C1\u77FF"
+      Value: 0
   perCost:
-    _serializedList: []
+    _serializedList:
+    - Key: "\u8865\u7ED9"
+      Value: 2
+    - Key: "\u94C1\u77FF"
+      Value: 0
   gameObject: {fileID: 6695698467338365989, guid: bb1f10a825e951d44b435ca581368a23, type: 3}
   counts: 0
   locationRow: 
@@ -27,6 +35,6 @@ MonoBehaviour:
   attack: 25
   defense: 20
   Health: 15
-  attackDistance: 0
-  moveDistance: 0
+  attackDistance: 1
+  moveDistance: 3
   maxAttackNumber: 1

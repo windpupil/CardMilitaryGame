@@ -12,6 +12,27 @@ public class Ground : MonoBehaviour
     public int row;              //行
     public int column;           //列
     public int Steps;            //步数
+    public bool isFogForAI =true; //对AI是否是迷雾
+    private bool isFogForPlayer = true; //对玩家是否是迷雾
+    public bool IsFogForPlayer
+    {
+        get { return isFogForPlayer; }
+        set
+        {
+            isFogForPlayer = value;
+            if(isFogForPlayer)
+            {
+                this.GetComponent<SpriteRenderer>().color = Color.gray;
+            }
+            else
+            {
+                this.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+        }
+    }
+    private void Start() {
+        IsFogForPlayer=true;
+    }
     private void OnMouseDown()
     {
         if (isActive&&Manage.Instance.isAction)

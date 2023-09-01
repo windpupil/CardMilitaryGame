@@ -147,7 +147,15 @@ namespace Dialogue2
                     {
                         dialogPanel.SetActive(false);
                     }
+                    else
+                    {
+                        Debug.Log("当前对话类型不存在");
+                    }
                 }
+                // else
+                // {
+                //     Debug.Log("当前对话ID和文件内ID不相符");
+                // }
             }
         }
 
@@ -201,7 +209,6 @@ namespace Dialogue2
             {
                 leftRoleName.gameObject.SetActive(true);
                 rightRoleName.gameObject.SetActive(false);
-
                 leftRoleName.text = name;
             }
             else

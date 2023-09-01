@@ -13,8 +13,6 @@ public class ObjectsControl : MonoBehaviour
     {
         get { return instance; }
     }
-    public const int MainCityRow = 8;
-    public const int MainCityColumn = 3;
     public SoldierCardData cardData;
     public int row; // 行
     public int column; // 列
@@ -28,8 +26,8 @@ public class ObjectsControl : MonoBehaviour
 
     private void OnDestroy()
     {
-        CollectionOfConstants.SuppliesConsumedPerTurn -= cardData.perCost["补给"];
-        CollectionOfConstants.IronConsumedPerTurn -= cardData.perCost["铁矿"];
+        Manage.Instance.SuppliesConsumedPerTurn -= cardData.perCost["补给"];
+        Manage.Instance.IronConsumedPerTurn -= cardData.perCost["铁矿"];
         StaticGround.Instance.updateGroundsColor();
     }
 
@@ -47,7 +45,7 @@ public class ObjectsControl : MonoBehaviour
     {
         //当物体被点击后，物体通过cardData中的distance来判断哪些格子可以到达
         //将所有可以到达的格子变成绿色
-        if (ActionNumberUI.Instance.actionNumber != 0&& Manage.Instance.isAction)
+        if (ActionNumberUI.Instance.actionNumber != 0 && Manage.Instance.isAction)
         {
             for (int i = 0; i <= realDistance; i++)
             {
@@ -55,93 +53,33 @@ public class ObjectsControl : MonoBehaviour
                 {
                     if ((i != 0 || j != 0) && ((i + j) <= realDistance))
                     {
-                        if (
-                            row + i < CollectionOfConstants.MapRow
-                            && column + j < CollectionOfConstants.MapColumn
-                            && !(row + i == MainCityRow && column + j == MainCityColumn)
-                            && !StaticGround.Instance.grounds[row + i, column + j]
-                                .GetComponent<Ground>()
-                                .isHaveObject
-                        )
+                        if (row + i < CollectionOfConstants.MapRow && column + j < CollectionOfConstants.MapColumn && !StaticGround.Instance.grounds[row + i, column + j].GetComponent<Ground>().isHaveObject)
                         {
-                            StaticGround.Instance.grounds[row + i, column + j]
-                                .GetComponent<SpriteRenderer>()
-                                .color = UnityEngine.Color.green;
-                            StaticGround.Instance.grounds[row + i, column + j]
-                                .GetComponent<Ground>()
-                                .isActive = true;
-                            StaticGround.Instance.grounds[row + i, column + j]
-                                .GetComponent<Ground>()
-                                .Steps = i + j;
-                            StaticGround.Instance.grounds[row + i, column + j]
-                                .GetComponent<Ground>()
-                                .possibleFootholds = this.gameObject;
+                            StaticGround.Instance.grounds[row + i, column + j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
+                            StaticGround.Instance.grounds[row + i, column + j].GetComponent<Ground>().isActive = true;
+                            StaticGround.Instance.grounds[row + i, column + j].GetComponent<Ground>().Steps = i + j;
+                            StaticGround.Instance.grounds[row + i, column + j].GetComponent<Ground>().possibleFootholds = this.gameObject;
                         }
-                        if (
-                            row - i >= 0
-                            && column + j < CollectionOfConstants.MapColumn
-                            && !(row - i == MainCityRow && column + j == MainCityColumn)
-                            && !StaticGround.Instance.grounds[row - i, column + j]
-                                .GetComponent<Ground>()
-                                .isHaveObject
-                        )
+                        if (row - i >= 0 && column + j < CollectionOfConstants.MapColumn && !StaticGround.Instance.grounds[row - i, column + j].GetComponent<Ground>().isHaveObject)
                         {
-                            StaticGround.Instance.grounds[row - i, column + j]
-                                .GetComponent<SpriteRenderer>()
-                                .color = UnityEngine.Color.green;
-                            StaticGround.Instance.grounds[row - i, column + j]
-                                .GetComponent<Ground>()
-                                .isActive = true;
-                            StaticGround.Instance.grounds[row - i, column + j]
-                                .GetComponent<Ground>()
-                                .Steps = i + j;
-                            StaticGround.Instance.grounds[row - i, column + j]
-                                .GetComponent<Ground>()
-                                .possibleFootholds = this.gameObject;
+                            StaticGround.Instance.grounds[row - i, column + j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
+                            StaticGround.Instance.grounds[row - i, column + j].GetComponent<Ground>().isActive = true;
+                            StaticGround.Instance.grounds[row - i, column + j].GetComponent<Ground>().Steps = i + j;
+                            StaticGround.Instance.grounds[row - i, column + j].GetComponent<Ground>().possibleFootholds = this.gameObject;
                         }
-                        if (
-                            row + i < CollectionOfConstants.MapRow
-                            && column - j >= 0
-                            && !(row + i == MainCityRow && column - j == MainCityColumn)
-                            && !StaticGround.Instance.grounds[row + i, column - j]
-                                .GetComponent<Ground>()
-                                .isHaveObject
-                        )
+                        if (row + i < CollectionOfConstants.MapRow && column - j >= 0 && !StaticGround.Instance.grounds[row + i, column - j].GetComponent<Ground>().isHaveObject)
                         {
-                            StaticGround.Instance.grounds[row + i, column - j]
-                                .GetComponent<SpriteRenderer>()
-                                .color = UnityEngine.Color.green;
-                            StaticGround.Instance.grounds[row + i, column - j]
-                                .GetComponent<Ground>()
-                                .isActive = true;
-                            StaticGround.Instance.grounds[row + i, column - j]
-                                .GetComponent<Ground>()
-                                .Steps = i + j;
-                            StaticGround.Instance.grounds[row + i, column - j]
-                                .GetComponent<Ground>()
-                                .possibleFootholds = this.gameObject;
+                            StaticGround.Instance.grounds[row + i, column - j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
+                            StaticGround.Instance.grounds[row + i, column - j].GetComponent<Ground>().isActive = true;
+                            StaticGround.Instance.grounds[row + i, column - j].GetComponent<Ground>().Steps = i + j;
+                            StaticGround.Instance.grounds[row + i, column - j].GetComponent<Ground>().possibleFootholds = this.gameObject;
                         }
-                        if (
-                            row - i >= 0
-                            && column - j >= 0
-                            && !(row - i == MainCityRow && column - j == MainCityColumn)
-                            && !StaticGround.Instance.grounds[row - i, column - j]
-                                .GetComponent<Ground>()
-                                .isHaveObject
-                        )
+                        if (row - i >= 0 && column - j >= 0 && !StaticGround.Instance.grounds[row - i, column - j].GetComponent<Ground>().isHaveObject)
                         {
-                            StaticGround.Instance.grounds[row - i, column - j]
-                                .GetComponent<SpriteRenderer>()
-                                .color = UnityEngine.Color.green;
-                            StaticGround.Instance.grounds[row - i, column - j]
-                                .GetComponent<Ground>()
-                                .isActive = true;
-                            StaticGround.Instance.grounds[row - i, column - j]
-                                .GetComponent<Ground>()
-                                .Steps = i + j;
-                            StaticGround.Instance.grounds[row - i, column - j]
-                                .GetComponent<Ground>()
-                                .possibleFootholds = this.gameObject;
+                            StaticGround.Instance.grounds[row - i, column - j].GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
+                            StaticGround.Instance.grounds[row - i, column - j].GetComponent<Ground>().isActive = true;
+                            StaticGround.Instance.grounds[row - i, column - j].GetComponent<Ground>().Steps = i + j;
+                            StaticGround.Instance.grounds[row - i, column - j].GetComponent<Ground>().possibleFootholds = this.gameObject;
                         }
                     }
                 }

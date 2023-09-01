@@ -143,8 +143,8 @@ public class CardShow
                             ResourceNumberUI.Instance.updateResourceNumberText();
                             HandCard.Instance.HandCardCounts--;
                             //更新每回合消耗的资源
-                            CollectionOfConstants.SuppliesConsumedPerTurn += cardData.perCost["补给"];
-                            CollectionOfConstants.IronConsumedPerTurn += cardData.perCost["铁矿"];
+                            Manage.Instance.SuppliesConsumedPerTurn += cardData.perCost["补给"];
+                            Manage.Instance.IronConsumedPerTurn += cardData.perCost["铁矿"];
                             //将该格的isHaveObject变为true
                             StaticGround.Instance.grounds[cardData.locationRow[i], cardData.locationColumn[i]].GetComponent<Ground>().isHaveObject = true;
                             //将该格的objectControl变为该物体

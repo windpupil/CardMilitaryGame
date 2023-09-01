@@ -176,6 +176,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &34128651
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -477,6 +478,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &70322833
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -627,6 +629,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &77585206
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -777,6 +780,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &82927820
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -927,6 +931,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &102462975
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1208,6 +1213,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &115934466
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1436,6 +1442,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &138436285
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1977,6 +1984,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &197420281
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2261,6 +2269,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &261171058
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2411,6 +2420,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &319089573
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2561,6 +2571,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &341997212
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2711,6 +2722,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &353738159
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2861,6 +2873,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &354342638
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3076,6 +3089,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &406463339
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3258,6 +3272,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &429951011
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3408,6 +3423,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &430336780
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3558,6 +3574,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &435982589
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3708,6 +3725,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &506179793
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3967,6 +3985,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &526848858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4117,6 +4136,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &567821768
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4716,6 +4736,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &661955614
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4866,6 +4887,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &666904254
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5016,6 +5038,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &689346562
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5166,6 +5189,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &705830650
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5316,6 +5340,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &709230933
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5466,6 +5491,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &736586445
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5616,6 +5642,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &754669902
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5841,6 +5868,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &778426149
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6137,6 +6165,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &867705580
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6510,6 +6539,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &878956602
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6692,6 +6722,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &902884309
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7244,6 +7275,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &995085292
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7394,6 +7426,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1003079195
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7500,7 +7533,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1012116619}
-  - component: {fileID: 1012116618}
   m_Layer: 0
   m_Name: "\u751F\u6210\u654C\u4EBA"
   m_TagString: Untagged
@@ -7508,20 +7540,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1012116618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012116617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a833a95d1a58944806f62bf408e1cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6695698467338365989, guid: bb1f10a825e951d44b435ca581368a23, type: 3}
-  enemyGround: {fileID: 1737924830}
 --- !u!4 &1012116619
 Transform:
   m_ObjectHideFlags: 0
@@ -7590,6 +7608,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1027416456
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7740,6 +7759,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1052805364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7890,6 +7910,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1063984712
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8281,6 +8302,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1166502191
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8565,6 +8587,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1179646686
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8715,6 +8738,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1245641167
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8999,6 +9023,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1262952249
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9149,6 +9174,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1281294962
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9480,6 +9506,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1363027247
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9630,6 +9657,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1405835524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9914,6 +9942,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1450430673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10064,6 +10093,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1459776617
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10316,6 +10346,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1530104765
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10466,6 +10497,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1543383262
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10616,6 +10648,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1560187395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10766,6 +10799,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1571345274
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10916,6 +10950,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1581703405
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11098,6 +11133,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1599188066
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11373,10 +11409,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourcePoints: []
-  resourceCard: []
-  notresourceCard: []
+  resourceCard:
+  - {fileID: 4029808121141651521, guid: e678b193f88fa144284c39ce184bbb23, type: 3}
+  - {fileID: 4029808121141651521, guid: e678b193f88fa144284c39ce184bbb23, type: 3}
+  - {fileID: 4029808121141651521, guid: e678b193f88fa144284c39ce184bbb23, type: 3}
+  - {fileID: 4029808121141651521, guid: e678b193f88fa144284c39ce184bbb23, type: 3}
+  - {fileID: 4029808121141651521, guid: e678b193f88fa144284c39ce184bbb23, type: 3}
+  - {fileID: 4029808121141651521, guid: e678b193f88fa144284c39ce184bbb23, type: 3}
+  - {fileID: 4029808121141651521, guid: e678b193f88fa144284c39ce184bbb23, type: 3}
+  - {fileID: 4029808121141651521, guid: e678b193f88fa144284c39ce184bbb23, type: 3}
+  - {fileID: 4029808121141651521, guid: e678b193f88fa144284c39ce184bbb23, type: 3}
+  - {fileID: 4029808121141651521, guid: e678b193f88fa144284c39ce184bbb23, type: 3}
+  notresourceCard:
+  - {fileID: 7595677294032592279, guid: 7b7a2c387887a6c478ff16ee9b4fefd1, type: 3}
+  - {fileID: 7595677294032592279, guid: 7b7a2c387887a6c478ff16ee9b4fefd1, type: 3}
+  - {fileID: 7595677294032592279, guid: 7b7a2c387887a6c478ff16ee9b4fefd1, type: 3}
+  - {fileID: 7595677294032592279, guid: 7b7a2c387887a6c478ff16ee9b4fefd1, type: 3}
+  - {fileID: 7595677294032592279, guid: 7b7a2c387887a6c478ff16ee9b4fefd1, type: 3}
+  - {fileID: 7595677294032592279, guid: 7b7a2c387887a6c478ff16ee9b4fefd1, type: 3}
+  - {fileID: 7595677294032592279, guid: 7b7a2c387887a6c478ff16ee9b4fefd1, type: 3}
+  - {fileID: 7595677294032592279, guid: 7b7a2c387887a6c478ff16ee9b4fefd1, type: 3}
+  - {fileID: 7595677294032592279, guid: 7b7a2c387887a6c478ff16ee9b4fefd1, type: 3}
+  - {fileID: 7595677294032592279, guid: 7b7a2c387887a6c478ff16ee9b4fefd1, type: 3}
   perConsumedFood: 0
   perConsumedIron: 0
+  enemyObject: {fileID: 6695698467338365989, guid: bb1f10a825e951d44b435ca581368a23, type: 3}
 --- !u!4 &1651334650
 Transform:
   m_ObjectHideFlags: 0
@@ -11445,6 +11502,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1668960406
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11595,6 +11653,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1670087290
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11911,6 +11970,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1737924833
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12529,6 +12589,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1793847208
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12679,6 +12740,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &1892601514
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12876,10 +12938,11 @@ MonoBehaviour:
   isActive: 0
   objectControl: {fileID: 0}
   possibleFootholds: {fileID: 0}
-  isHaveObject: 0
+  isHaveObject: 1
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!1 &1940253541
 GameObject:
   m_ObjectHideFlags: 0
@@ -13058,10 +13121,11 @@ MonoBehaviour:
   isActive: 0
   objectControl: {fileID: 0}
   possibleFootholds: {fileID: 0}
-  isHaveObject: 0
+  isHaveObject: 1
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!1 &2039637426
 GameObject:
   m_ObjectHideFlags: 0
@@ -13249,6 +13313,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &2048756276
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13531,6 +13596,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &2105308933
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13827,6 +13893,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
 --- !u!61 &2135203615
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13978,6 +14045,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
   resourceNumber: 10
   resourceType: "\u8865\u7ED9"
 --- !u!61 &6811295344361893995
@@ -14490,6 +14558,7 @@ MonoBehaviour:
   row: 0
   column: 0
   Steps: 0
+  isFogForAI: 1
   resourceNumber: 5
   resourceType: "\u94C1\u77FF"
 --- !u!61 &8953016743123610727
