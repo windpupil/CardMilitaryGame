@@ -922,7 +922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b302d98191e56db4196018e0ef316ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 11400000, guid: ddc8d65ab2386c04b9d9f2221f2360b5, type: 2}
+  data: {fileID: 11400000, guid: ddc8d65ab2386c04b9d9f2221f2360b5, type: 2}
   tipResource: {fileID: 8571926888338205206, guid: 2eacec079e3caa448aee1c08a8338836, type: 3}
 --- !u!114 &3887163106098759335
 MonoBehaviour:

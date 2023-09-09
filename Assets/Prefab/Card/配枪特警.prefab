@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b302d98191e56db4196018e0ef316ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 11400000, guid: 69898a0081824174584f20ee5a125376, type: 2}
+  data: {fileID: 11400000, guid: 69898a0081824174584f20ee5a125376, type: 2}
   tipResource: {fileID: 8571926888338205206, guid: 2eacec079e3caa448aee1c08a8338836, type: 3}
 --- !u!114 &5564196907537122581
 MonoBehaviour:

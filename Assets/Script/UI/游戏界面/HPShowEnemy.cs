@@ -6,12 +6,11 @@ using UnityEngine.UI;
 public class HPShowEnemy : MonoBehaviour
 {
     [SerializeField]
-    private Enemy enemy;
+    private EnemyFight enemyFight;
     [SerializeField]
     private GameObject obj;
     [SerializeField]
     private Canvas canvas;
-
     private Vector3 ptWorld;
 
     private void Start()
@@ -22,7 +21,7 @@ public class HPShowEnemy : MonoBehaviour
 
     public void updateHPUI()
     {
-        this.GetComponent<Image>().fillAmount = enemy.hp / enemy.cardData.health;
+        this.GetComponent<Image>().fillAmount = enemyFight.hp / enemyFight.data.health;
     }
 
     private void Update()

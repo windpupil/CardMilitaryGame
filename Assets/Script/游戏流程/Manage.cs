@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// 本脚本是游戏流程的控制脚本
@@ -13,7 +14,7 @@ public class Manage : MonoBehaviour
     /// 本方法用于将资源点加入到resourcePoints中
     /// </summary>
     /// <param name="resourceGround"></param>
-    public void AddResourceGround (ResourceGround resourceGround)
+    public void AddResourceGround(ResourceGround resourceGround)
     {
         resourcePoints.Add(resourceGround);
     }
@@ -35,8 +36,8 @@ public class Manage : MonoBehaviour
             }
         }
     }
-        [Tooltip("本变量用于存放Canvas")]
-        public Transform Canvas; //Canvas
+    [Tooltip("本变量用于存放Canvas")]
+    public Transform Canvas; //Canvas
 
     private static Manage instance;
     public static Manage Instance
@@ -44,7 +45,8 @@ public class Manage : MonoBehaviour
         get { return instance; }
     }
 
-    private void Awake() {
+    private void Awake()
+    {
         instance = this;
     }
     private void Start()
@@ -87,10 +89,14 @@ public class Manage : MonoBehaviour
         Debug.Log("游戏准备阶段开始");
         isEnd = false;
         isBegin = true;
+        //更新士兵的realDistance
+        
+
+        
         //遍历所有资源点，将资源点的资源数加到资源UI上
         foreach (ResourceGround resourcePoint in resourcePoints)
         {
-            if (resourcePoint.GetComponent<Ground>().objectControl !=null&& resourcePoint.GetComponent<Ground>().objectControl.tag == "Soldier")
+            if (resourcePoint.GetComponent<Ground>().objectControl != null && resourcePoint.GetComponent<Ground>().objectControl.tag == "Soldier")
             {
                 if (resourcePoint.resourceType == "补给")
                 {
@@ -178,7 +184,7 @@ public class Manage : MonoBehaviour
     public void End()
     {
         //检测handCard的子物体数量是否大于10
-        if (HandCard.Instance.HandCardCounts > CollectionOfConstants.HandCardLimit)
+        if (HandCard.Instance.HandCardCounts > CollectionOfConstants.HANDCARDLIMIT)
         {
             //生成提示
             GameObject tip = Instantiate(handCardtip, Canvas.position, Quaternion.identity);
@@ -191,7 +197,7 @@ public class Manage : MonoBehaviour
             isAction = false;
             isEnd = true;
             Rounds++;
-            StaticGround.Instance.updateObjectsControlRealDistance(); //更新物体的realDistance
+            // StaticGround.Instance.updateObjectsControlRealDistance(); //更新物体的realDistance
             StaticGround.Instance.updateSoldierAttackNumber(); //更新物体的attackNumber
             AIBrain.Instance.Begin();
         }
@@ -203,7 +209,7 @@ public class Manage : MonoBehaviour
         ResourceNumberUI.Instance.FoodNumber -= SuppliesConsumedPerTurn;
         ResourceNumberUI.Instance.IronNumber -= IronConsumedPerTurn;
         ResourceNumberUI.Instance.updateResourceNumberText();
-        if ( CollectionOfConstants.actionNumberLimit>= ActionNumberUI.Instance.actionNumberCurrentLimit && Rounds != 1)
+        if (CollectionOfConstants.ACTIONNUMBERLIMIT >= ActionNumberUI.Instance.actionNumberCurrentLimit && Rounds != 1)
         {
             ActionNumberUI.Instance.actionNumberCurrentLimit++;
         }
@@ -256,7 +262,7 @@ public class Manage : MonoBehaviour
         // Debug.Log("铁矿数量是：" + ResourceNumberUI.Instance.IronNumber);
         // Debug.Log("每回合消耗的食物数量是：" + SuppliesConsumedPerTurn);
         // Debug.Log("每回合消耗的铁矿数量是：" + IronConsumedPerTurn);
-        if ( ResourceNumberUI.Instance.FoodNumber >= SuppliesConsumedPerTurn && ResourceNumberUI.Instance.IronNumber >= IronConsumedPerTurn)
+        if (ResourceNumberUI.Instance.FoodNumber >= SuppliesConsumedPerTurn && ResourceNumberUI.Instance.IronNumber >= IronConsumedPerTurn)
         {
             return true;
         }
@@ -265,4 +271,24 @@ public class Manage : MonoBehaviour
             return false;
         }
     }
+    //观察者模式,但是暂时用不到
+    // private List<IObserver> observers = new List<IObserver>();
+    // //添加观察者
+    // public void AddObserver(IObserver observer)
+    // {
+    //     observers.Add(observer);
+    // }
+    // //移除观察者
+    // public void RemoveObserver(IObserver observer)
+    // {
+    //     observers.Remove(observer);
+    // }
+    // //发送通知给观察者
+    // public void Notify()
+    // {
+    //     for (int i = 0; i < observers.Count; i++)
+    //     {
+    //         observers[i]?.ResponseToNotify();
+    //     }
+    // }
 }

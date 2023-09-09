@@ -2,68 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Ground : MonoBehaviour
 {
-    public bool isActive = false;  //是否激活
     public GameObject objectControl;    //格子上的物体
-    public GameObject possibleFootholds;  //可能的落脚点
     public bool isHaveObject = false;  //是否有物体
     public int row;              //行
     public int column;           //列
-    public int Steps;            //步数
-    public bool isFogForAI =true; //对AI是否是迷雾
-    private bool isFogForPlayer = true; //对玩家是否是迷雾
-    public bool IsFogForPlayer
-    {
-        get { return isFogForPlayer; }
-        set
-        {
-            isFogForPlayer = value;
-            if(isFogForPlayer)
-            {
-                this.GetComponent<SpriteRenderer>().color = Color.gray;
-            }
-            else
-            {
-                this.GetComponent<SpriteRenderer>().color = Color.white;
-            }
-        }
-    }
-    private void Start() {
-        IsFogForPlayer=true;
-    }
+    public UnityEvent ClickEvent;
     private void OnMouseDown()
     {
-        if (isActive&&Manage.Instance.isAction)
-        {
-            //当格子被点击后，物体移动到这个格子上
-            //将格子变成原来的颜色
-            StaticGround.Instance.updateGroundsColor();
-            //将物体的对象赋值到这个格子上
-            objectControl=possibleFootholds;
-            isHaveObject = true;
-            //将物体原来所在的位置更新为没有物体
-            StaticGround.Instance.grounds[possibleFootholds.GetComponent<ObjectsControl>().row, possibleFootholds.GetComponent<ObjectsControl>().column].GetComponent<Ground>().isHaveObject = false;
-            StaticGround.Instance.grounds[possibleFootholds.GetComponent<ObjectsControl>().row, possibleFootholds.GetComponent<ObjectsControl>().column].GetComponent<Ground>().objectControl = null;
-            //将物体移动到这个格子上
-            possibleFootholds.transform.position = this.transform.position;
-            //将物体的行列数改变
-            possibleFootholds.GetComponent<ObjectsControl>().row = row;
-            possibleFootholds.GetComponent<ObjectsControl>().column = column;
-            //行动点-1
-            ActionNumberUI.Instance.actionNumber--;
-            ActionNumberUI.Instance.updateActionNumberText();
-            //distance减去相应的步数
-            possibleFootholds.GetComponent<ObjectsControl>().realDistance -= Steps;
-        }
-    }
-
-    public void updateObjectsControlRealDistance()
-    {
-        if(isHaveObject&&objectControl.tag=="Soldier")
-        {
-            objectControl.GetComponent<ObjectsControl>().realDistance = objectControl.GetComponent<ObjectsControl>().cardData.moveDistance;
-        }
+        ClickEvent.Invoke();
     }
 }

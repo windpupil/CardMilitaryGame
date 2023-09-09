@@ -862,7 +862,7 @@ GameObject:
   - component: {fileID: 9034193937778858967}
   - component: {fileID: 2507366934521941559}
   m_Layer: 0
-  m_Name: TestObject
+  m_Name: "\u914D\u67AA\u8B66\u5BDF"
   m_TagString: Soldier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

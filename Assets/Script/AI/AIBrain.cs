@@ -106,7 +106,7 @@ public class AIBrain : MonoBehaviour
             //遍历所有enemys，找到消耗补给最少的
             foreach (GameObject enemy in Enemys)
             {
-                if (enemy.GetComponent<Enemy>().cardData.perCost["补给"] < Enemys[minConsumedNumber].GetComponent<Enemy>().cardData.perCost["补给"])
+                if (enemy.GetComponent<Enemy>().data.perCost["补给"] < Enemys[minConsumedNumber].GetComponent<Enemy>().data.perCost["补给"])
                 {
                     minConsumedNumber = Enemys.IndexOf(enemy);
                 }
@@ -121,7 +121,7 @@ public class AIBrain : MonoBehaviour
             //遍历所有enemys，找到消耗补给最少的
             foreach (GameObject enemy in Enemys)
             {
-                if (enemy.GetComponent<Enemy>().cardData.perCost["铁矿"] < Enemys[minConsumedNumber].GetComponent<Enemy>().cardData.perCost["铁矿"])
+                if (enemy.GetComponent<Enemy>().data.perCost["铁矿"] < Enemys[minConsumedNumber].GetComponent<Enemy>().data.perCost["铁矿"])
                 {
                     minConsumedNumber = Enemys.IndexOf(enemy);
                 }
@@ -180,26 +180,26 @@ public class AIBrain : MonoBehaviour
         {
             foreach (GameObject card in cards)
             {
-                if (card.GetComponent<Enemy>().cardData.cardType == "陷阱" || card.GetComponent<Enemy>().cardData.cardType == "策略")
+                if (card.GetComponent<Enemy>().data.cardType == "陷阱" || card.GetComponent<Enemy>().data.cardType == "策略")
                 {
 
                 }
                 else
                 {
                     //判断资源是否足够
-                    if (foodNumberAI >= card.GetComponent<Enemy>().cardData.cost["补给"] && ironNumberAI >= card.GetComponent<Enemy>().cardData.cost["铁矿"])
+                    if (foodNumberAI >= card.GetComponent<Enemy>().data.cost["补给"] && ironNumberAI >= card.GetComponent<Enemy>().data.cost["铁矿"])
                     {
                         if (!StaticGround.Instance.grounds[1, 3].GetComponent<Ground>().isHaveObject)
                         {
-                            Set(enemyObject, 1, 3, card.GetComponent<Enemy>().cardData);
+                            Set(enemyObject, 1, 3, card.GetComponent<Enemy>().data);
                         }
                         else if (!StaticGround.Instance.grounds[0, 2].GetComponent<Ground>().isHaveObject)
                         {
-                            Set(enemyObject, 0, 2, card.GetComponent<Enemy>().cardData);
+                            Set(enemyObject, 0, 2, card.GetComponent<Enemy>().data);
                         }
                         else if (!StaticGround.Instance.grounds[0, 4].GetComponent<Ground>().isHaveObject)
                         {
-                            Set(enemyObject, 0, 4, card.GetComponent<Enemy>().cardData);
+                            Set(enemyObject, 0, 4, card.GetComponent<Enemy>().data);
                         }
                     }
                 }
@@ -238,7 +238,7 @@ public class AIBrain : MonoBehaviour
                 //比较部署所需补给数，丢掉补给数最小的兵种卡
                 foreach (GameObject card in cards)
                 {
-                    if (card.GetComponent<Enemy>().cardData.cost["补给"] < cards[minConsumedNumber].GetComponent<Enemy>().cardData.perCost["补给"])
+                    if (card.GetComponent<Enemy>().data.cost["补给"] < cards[minConsumedNumber].GetComponent<Enemy>().data.perCost["补给"])
                     {
                         minConsumedNumber = cards.IndexOf(card);
                     }
@@ -255,13 +255,13 @@ public class AIBrain : MonoBehaviour
     public void Set(GameObject enemyObject, int rowInput, int columnInput, SoldierCardData soldierCardData)
     {
         GameObject enemy = Instantiate(enemyObject);
-        enemy.GetComponent<Enemy>().Initializ(soldierCardData);
+        // enemy.GetComponent<Enemy>().Initializ(soldierCardData);
         enemy.transform.position = StaticGround.Instance.grounds[rowInput, columnInput].transform.position;
         enemy.GetComponent<Enemy>().row = rowInput;
         enemy.GetComponent<Enemy>().column = columnInput;
         Enemys.Add(enemy);
-        foodNumberAI -= enemy.GetComponent<Enemy>().cardData.cost["补给"];
-        ironNumberAI -= enemy.GetComponent<Enemy>().cardData.cost["铁矿"];
+        foodNumberAI -= enemy.GetComponent<Enemy>().data.cost["补给"];
+        ironNumberAI -= enemy.GetComponent<Enemy>().data.cost["铁矿"];
         StaticGround.Instance.grounds[rowInput, columnInput].GetComponent<Ground>().isHaveObject = true;
         StaticGround.Instance.grounds[rowInput, columnInput].GetComponent<Ground>().objectControl = enemy;
     }

@@ -4,20 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class CardShowEx: MonoBehaviour
+public class CardShowEx : MonoBehaviour
 {
-    public void ShowCard(SoldierCardData cardData)
+    public void ShowCard(SoldierCardData data)
     {
-        this.transform.GetComponent<Image>().sprite = cardData.cardImage;
+        this.transform.GetComponent<Image>().sprite = data.cardImage;
         this.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text =
-            cardData.attack.ToString();
+            data.attack.ToString();
         this.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text =
-            cardData.defense.ToString();
+            data.defense.ToString();
         this.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text =
-            cardData.health.ToString();
+            data.health.ToString();
         this.transform.GetChild(0).GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text =
-            cardData.attackDistance.ToString();
+            data.attackDistance.ToString();
         this.transform.GetChild(0).GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>().text =
-            cardData.moveDistance.ToString();
+            data.moveDistance.ToString();
     }
 }

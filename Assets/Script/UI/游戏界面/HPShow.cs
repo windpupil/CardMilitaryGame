@@ -23,7 +23,7 @@ public class HPShow : MonoBehaviour
 
     public void updateHPUI()
     {
-        this.GetComponent<Image>().fillAmount = fight.hp / fight.data.cardData.health;
+        this.GetComponent<Image>().fillAmount = fight.hp / fight.data.health;
     }
 
     private void Update()

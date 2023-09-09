@@ -11,7 +11,8 @@ public class HandCard : MonoBehaviour
         get { return instance; }
         set { instance = value; }
     }
-    private void Start() {
+    private void Start()
+    {
         instance = this;
     }
 
@@ -21,12 +22,12 @@ public class HandCard : MonoBehaviour
         get { return handCardCounts; }
         set
         {
-            if(value!=handCardCounts)
+            if (value != handCardCounts)
             {
                 //整理手牌
             }
             handCardCounts = value;
-            if(handCardCounts > CollectionOfConstants.HandCardLimit)
+            if (handCardCounts > CollectionOfConstants.HANDCARDLIMIT)
             {
                 isUpperLimit = true;
             }
@@ -34,7 +35,7 @@ public class HandCard : MonoBehaviour
             {
                 isUpperLimit = false;
             }
-            if (Manage.Instance.isEnd && handCardCounts <= CollectionOfConstants.HandCardLimit)
+            if (Manage.Instance.isEnd && handCardCounts <= CollectionOfConstants.HANDCARDLIMIT)
             {
                 Manage.Instance.End();
             }

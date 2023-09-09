@@ -11,7 +11,7 @@ public class ResourceNumberUI : MonoBehaviour
     {
         get { return instance; }
     }
-    private int foodNumber = CollectionOfConstants.initialFoodNumber;
+    private int foodNumber = CollectionOfConstants.INITIALFOODNUMBER;
     public int FoodNumber
     {
         get
@@ -45,7 +45,7 @@ public class ResourceNumberUI : MonoBehaviour
         }
     }
 
-    private int ironNumber = CollectionOfConstants.initialIronNumber;
+    private int ironNumber = CollectionOfConstants.INITIALFOODNUMBER;
     public int IronNumber
     {
         get
@@ -72,6 +72,6 @@ public class ResourceNumberUI : MonoBehaviour
     }
     public void updateResourceNumberText()
     {
-        tip.text = "补给:" + foodNumber.ToString() +  "\n铁矿:" + ironNumber.ToString();
+        tip.text = "补给:" + foodNumber.ToString() + "\n铁矿:" + ironNumber.ToString();
     }
 }
