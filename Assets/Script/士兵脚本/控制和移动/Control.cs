@@ -6,16 +6,13 @@ using UnityEngine;
 /// </summary>
 public class Control : BaseObject
 {
-    private int realDistance = 0; // 回合中实际剩余步数
-    public List<GameObject> moveObject { get; private set; } = new List<GameObject>(); // 可移动的格子
-    private void Start() {
-        realDistance = data.moveDistance;
-    }
-
+    [HideInInspector]
+    public int realDistance = 0; // 回合中实际剩余步数
+    [HideInInspector]
+    public HashSet<GameObject> moveObject { get; private set; } = new HashSet<GameObject>(); // 可移动的格子
     /// <summary>
     /// 获取可移动的格子
     /// </summary>
-    /// <returns></returns>
     public void GetMoveDistanceObject()
     {
         moveObject.Clear();
@@ -64,18 +61,6 @@ public class Control : BaseObject
         realDistance -= steps;
         row = ground.row;
         column = ground.column;
-        if (this.gameObject.tag == "Soldier")
-        {
-            //更新地图颜色
-            StaticGround.Instance.updateGroundsColor();
-            //行动点-1
-            ActionNumberUI.Instance.actionNumber--;
-            ActionNumberUI.Instance.updateActionNumberText();
-            foreach (GameObject go in moveObject)
-            {
-                RemoveGroundListener(go);
-            }
-        }
     }
     /// <summary>
     /// 更新物体的实际步数
@@ -83,10 +68,5 @@ public class Control : BaseObject
     public void updateObjectsControlRealDistance()
     {
         realDistance = data.moveDistance;
-    }
-
-    public void RemoveGroundListener(GameObject go)
-    {
-        go.GetComponent<Ground>().ClickEvent.RemoveListener(() => { Move(go); });
     }
 }

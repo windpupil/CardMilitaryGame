@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf18394eb7434042a6f69f3f0b111cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 11400000, guid: b4af0a25dd4dc154ca4c983360fa7ccc, type: 2}
+  data: {fileID: 11400000, guid: b4af0a25dd4dc154ca4c983360fa7ccc, type: 2}
   row: 0
   column: 0
-  HealthBar: {fileID: 0}
-  isAttacking: 1
+  realDistance: 0

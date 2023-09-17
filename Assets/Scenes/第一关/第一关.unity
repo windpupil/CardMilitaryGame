@@ -169,14 +169,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &34128651
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -193,7 +192,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -471,14 +470,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &70322833
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -495,7 +493,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -622,14 +620,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &77585206
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -646,7 +643,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -773,14 +770,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &82927820
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -797,7 +793,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -924,14 +920,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &102462975
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -948,7 +943,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1206,14 +1201,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &115934466
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1230,7 +1224,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1435,14 +1429,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &138436285
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1459,7 +1452,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1977,14 +1970,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &197420281
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2001,7 +1993,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2262,14 +2254,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &261171058
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2286,7 +2277,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2413,14 +2404,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &319089573
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2437,7 +2427,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2564,14 +2554,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &341997212
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2588,7 +2577,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2715,14 +2704,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &353738159
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2739,7 +2727,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2866,14 +2854,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &354342638
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2890,7 +2877,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3082,14 +3069,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &406463339
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3106,7 +3092,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3265,14 +3251,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &429951011
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3289,7 +3274,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3416,14 +3401,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &430336780
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3440,7 +3424,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3567,14 +3551,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &435982589
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3591,7 +3574,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3718,14 +3701,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &506179793
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3742,7 +3724,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3978,14 +3960,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &526848858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4002,7 +3983,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -4129,14 +4110,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &567821768
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4153,7 +4133,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -4729,14 +4709,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &661955614
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4753,7 +4732,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -4880,14 +4859,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &666904254
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4904,7 +4882,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5031,14 +5009,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &689346562
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5055,7 +5032,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5182,14 +5159,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &705830650
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5206,7 +5182,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5333,14 +5309,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &709230933
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5357,7 +5332,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5484,14 +5459,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &736586445
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5508,7 +5482,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5635,14 +5609,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &754669902
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5659,7 +5632,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5861,14 +5834,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &778426149
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5885,7 +5857,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -6158,14 +6130,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &867705580
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6182,7 +6153,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -6532,14 +6503,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &878956602
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6556,7 +6526,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -6715,14 +6685,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &902884309
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6739,7 +6708,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -7268,14 +7237,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &995085292
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7292,7 +7260,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -7419,14 +7387,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1003079195
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7443,7 +7410,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -7524,37 +7491,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1012116617
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1012116619}
-  m_Layer: 0
-  m_Name: "\u751F\u6210\u654C\u4EBA"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1012116619
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012116617}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 874.262, y: 530.33014, z: -6.2778654}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1027416453
 GameObject:
   m_ObjectHideFlags: 0
@@ -7601,14 +7537,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1027416456
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7625,7 +7560,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -7752,14 +7687,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1052805364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7776,7 +7710,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -7903,14 +7837,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1063984712
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7927,7 +7860,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -8295,14 +8228,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1166502191
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8319,7 +8251,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -8580,14 +8512,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1179646686
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8604,7 +8535,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -8731,14 +8662,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1245641167
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8755,7 +8685,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -9016,14 +8946,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1262952249
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9040,7 +8969,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -9167,14 +9096,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1281294962
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9191,7 +9119,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -9499,14 +9427,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1363027247
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9523,7 +9450,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -9650,14 +9577,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1405835524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9674,7 +9600,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -9935,14 +9861,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1450430673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9959,7 +9884,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -10086,14 +10011,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1459776617
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10110,7 +10034,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -10339,14 +10263,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1530104765
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10363,7 +10286,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -10490,14 +10413,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1543383262
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10514,7 +10436,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -10641,14 +10563,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1560187395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10665,7 +10586,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -10792,14 +10713,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1571345274
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10816,7 +10736,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -10943,14 +10863,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1581703405
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10967,7 +10886,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -11126,14 +11045,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1599188066
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11150,7 +11068,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -11495,14 +11413,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1668960406
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11519,7 +11436,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -11646,14 +11563,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1670087290
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11670,7 +11586,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -11963,14 +11879,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1737924833
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11987,7 +11902,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -12386,7 +12301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14785540ac043c44abe28f6a5f655eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionNumber: 1
   actionNumberCurrentLimit: 1
 --- !u!1 &1754310264
 GameObject:
@@ -12582,14 +12496,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1793847208
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12606,7 +12519,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -12733,14 +12646,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1892601514
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12757,7 +12669,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -12935,14 +12847,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 1
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1940253541
 GameObject:
   m_ObjectHideFlags: 0
@@ -13118,14 +13029,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 1
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2039637426
 GameObject:
   m_ObjectHideFlags: 0
@@ -13306,14 +13216,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &2048756276
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13330,7 +13239,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -13589,14 +13498,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &2105308933
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13613,7 +13521,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -13886,14 +13794,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd41eba7627a1542bf989f5c0f63eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &2135203615
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13910,7 +13817,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -14038,14 +13945,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4be0290408463aa45af04e7e47aca816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   resourceNumber: 10
   resourceType: "\u8865\u7ED9"
 --- !u!61 &6811295344361893995
@@ -14064,7 +13970,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -14551,14 +14457,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4be0290408463aa45af04e7e47aca816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   objectControl: {fileID: 0}
-  possibleFootholds: {fileID: 0}
   isHaveObject: 0
   row: 0
   column: 0
-  Steps: 0
-  isFogForAI: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   resourceNumber: 5
   resourceType: "\u94C1\u77FF"
 --- !u!61 &8953016743123610727
@@ -14577,7 +14482,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -14649,7 +14554,6 @@ SceneRoots:
   - {fileID: 1305962680}
   - {fileID: 162422443}
   - {fileID: 381784917}
-  - {fileID: 1012116619}
   - {fileID: 631459345}
   - {fileID: 1147090466}
   - {fileID: 1651334650}

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+/// <summary>
+/// 本脚本用于挂载在资源卡上以显示资源卡的信息并执行相关操作
+/// </summary>
 public class ResourceCardShow : MonoBehaviour
 {
     //本脚本用于挂载在资源卡上以显示资源卡的信息并执行相关操作
@@ -12,9 +14,9 @@ public class ResourceCardShow : MonoBehaviour
     private void Start()
     {
         ShowCard();
-        this.transform.SetParent(GameObject.Find("Canvas").transform);
-        this.transform.localPosition = new Vector3(0, 0, 0);
-        Destroy(this.gameObject, 1f);
+        this.transform.parent.SetParent(GameObject.Find("Canvas").transform);
+        this.transform.parent.localPosition = new Vector3(0, 0, 0);
+        Destroy(this.transform.parent.gameObject, 1f);
     }
 
     public void ShowCard()

@@ -844,7 +844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7dd0196243f6834ea773e574d47884a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fight: {fileID: 36907351785740128}
+  fight: {fileID: 7464032533276124922}
   obj: {fileID: 6695698467338365989}
   canvas: {fileID: 7314523963443593546}
 --- !u!1 &6695698467338365989
@@ -858,9 +858,9 @@ GameObject:
   - component: {fileID: 6945987313731466329}
   - component: {fileID: 1301384071125094922}
   - component: {fileID: 1090793609349425544}
-  - component: {fileID: 36907351785740128}
   - component: {fileID: 9034193937778858967}
   - component: {fileID: 2507366934521941559}
+  - component: {fileID: 7464032533276124922}
   m_Layer: 0
   m_Name: "\u6C11\u8B66"
   m_TagString: Soldier
@@ -955,26 +955,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05809c456f5b814b9f5f13f806a5a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 11400000, guid: 78419accce4dc98438655146b5748cc7, type: 2}
+  data: {fileID: 11400000, guid: a401e4fa584c26a43a60fef0ef31ad55, type: 2}
   row: 0
   column: 0
   realDistance: 0
---- !u!114 &36907351785740128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6695698467338365989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f8f3d840c78a064492940d2b95a171f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 1090793609349425544}
-  attackNumber: 0
-  attack: 0
-  defense: 0
 --- !u!61 &9034193937778858967
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1065,6 +1049,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4338379, y: 0.27337646}
   m_EdgeRadius: 0
+--- !u!114 &7464032533276124922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6695698467338365989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e69fb554e54914f8fd30cd2dabe519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: a401e4fa584c26a43a60fef0ef31ad55, type: 2}
+  row: 0
+  column: 0
+  attackNumber: 0
+  attack: 0
+  defense: 0
+  attackDistance: 0
+  HealthBar: {fileID: 0}
 --- !u!1 &7471666771982251967
 GameObject:
   m_ObjectHideFlags: 0

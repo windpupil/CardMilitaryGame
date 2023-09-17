@@ -39,17 +39,8 @@ public class Fight :BaseObject
     {
         isAttacking = !isAttacking;
     }
-    [SerializeField] Image HealthBar; // 血条
-    private void Start()
-    {
-        if (HealthBar != null)
-            HealthBar.transform.position = Camera.main.WorldToScreenPoint(this.transform.position);
-        attackNumber = data.maxAttackNumber;
-        hp = data.health;
-        attack = data.attack;
-        defense = data.defense;
-        attackDistance = data.attackDistance;
-    }
+    [HideInInspector]
+    public Image HealthBar; // 血条
     public List<GameObject> attackObject { get ;private set; }= new List<GameObject>();//攻击对象
 
     /// <summary>

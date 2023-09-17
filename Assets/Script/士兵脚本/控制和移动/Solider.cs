@@ -16,6 +16,7 @@ public class Solider : Control
     private void Start()
     {
         instance = this;
+        realDistance = data.moveDistance;
     }
     /// <summary>
     /// 当物体被销毁时，将其从每回合消耗的资源中减去
@@ -30,8 +31,11 @@ public class Solider : Control
 
     private void OnMouseDown()
     {
+        Debug.Log("点击了士兵");
+        Debug.Log("士兵的可移动步数为：" + realDistance);
         //更新整张地图恢复原来的颜色
         StaticGround.Instance.updateGroundsColor();
+        StaticGround.Instance.ClearAllGroundListner();
         SearchAndShowGrounds();
     }
 
@@ -44,17 +48,27 @@ public class Solider : Control
         {
             GetMoveDistanceObject();
             SetGround();
-            AddmoveObjectListener();
+            AddGroundListener();
         }
     }
     /// <summary>
     /// 添加监听，当可移动物体被点击时，移动到该物体上
     /// </summary>
-    public void AddmoveObjectListener()
+    public void AddGroundListener()
     {
         foreach (GameObject go in moveObject)
         {
-            go.GetComponent<Ground>().ClickEvent.AddListener(() => { Move(go); });
+            go.GetComponent<Ground>().ClickEvent.AddListener(() => { Move(go);SoldierUpdate(); });
+        }
+    }
+    /// <summary>
+    /// 移除监听
+    /// </summary>
+    public void RemoveGroundListener()
+    {
+        foreach (GameObject go in moveObject)
+        {
+            go.GetComponent<Ground>().ClickEvent.RemoveAllListeners();
         }
     }
     /// <summary>
@@ -62,9 +76,21 @@ public class Solider : Control
     /// </summary>
     public void SetGround()
     {
-        foreach(GameObject go in moveObject)
+        foreach (GameObject go in moveObject)
         {
             go.GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
         }
+    }
+    /// <summary>
+    /// 士兵特有的移动处理
+    /// </summary>
+    public void SoldierUpdate()
+    {
+        //更新地图颜色
+        StaticGround.Instance.updateGroundsColor();
+        //行动点-1
+        ActionNumberUI.Instance.actionNumber--;
+        ActionNumberUI.Instance.updateActionNumberText();
+        RemoveGroundListener();
     }
 }

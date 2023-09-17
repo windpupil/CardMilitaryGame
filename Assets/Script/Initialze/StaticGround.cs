@@ -62,9 +62,9 @@ public class StaticGround : MonoBehaviour
         {
             for (int j = 0; j < CollectionOfConstants.MAPCOLUMN; j++)
             {
-                if (grounds[i, j].GetComponent<Ground>().isHaveObject && grounds[i, j].GetComponent<Ground>().objectControl.tag == "Soldier")
+                if (grounds[i, j].GetComponent<Ground>().isHaveObject && grounds[i, j].GetComponent<Ground>().objectControl != null && grounds[i, j].GetComponent<Ground>().objectControl.tag == "Soldier")
                 {
-                    grounds[i, j].GetComponent<Ground>().objectControl.GetComponent<Fight>().attackNumber = grounds[i, j].GetComponent<Ground>().objectControl.GetComponent<Fight>().data.maxAttackNumber;
+                    grounds[i, j].GetComponent<Ground>().objectControl.GetComponent<Solider>().updateObjectsControlRealDistance();
                 }
             }
         }
@@ -78,10 +78,23 @@ public class StaticGround : MonoBehaviour
         {
             for (int j = 0; j < CollectionOfConstants.MAPCOLUMN; j++)
             {
-                if (grounds[i, j].GetComponent<Ground>().isHaveObject && grounds[i, j].GetComponent<Ground>().objectControl.tag == "Soldier")
+                if (grounds[i, j].GetComponent<Ground>().isHaveObject && grounds[i, j].GetComponent<Ground>().objectControl != null && grounds[i, j].GetComponent<Ground>().objectControl.tag == "Soldier")
                 {
                     grounds[i, j].GetComponent<Ground>().objectControl.transform.Find("状态转换按钮").GetComponent<StateTransitionButton>().isOn = false;
                 }
+            }
+        }
+    }
+    /// <summary>
+    /// 清楚所有格子的监听
+    /// </summary>
+    public void ClearAllGroundListner()
+    {
+        for (int i = 0; i < CollectionOfConstants.MAPROW; i++)
+        {
+            for (int j = 0; j < CollectionOfConstants.MAPCOLUMN; j++)
+            {
+                grounds[i, j].GetComponent<Ground>().ClearGroundListner();
             }
         }
     }

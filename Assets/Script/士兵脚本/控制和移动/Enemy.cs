@@ -15,6 +15,7 @@ public class Enemy : Control
     private void Start()
     {
         instance = this;
+        realDistance = data.moveDistance;
     }
 
     /// <summary>

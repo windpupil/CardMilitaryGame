@@ -8,20 +8,9 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class CardShow
-    : MonoBehaviour,
-        IDragHandler,
-        IBeginDragHandler,
-        IEndDragHandler,
-        IPointerExitHandler,
-        IPointerEnterHandler
+public class CardShow: MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandler,IPointerExitHandler,IPointerEnterHandler
 {
     public SoldierCardData data; // 卡牌数据
-    private static CardShow instance;
-    public static CardShow Instance
-    {
-        get { return instance; }
-    }
 
     private bool isAllowDrag = true; // 是否允许拖拽
     private GameObject foldedGround; //”丢弃“的游戏对象
@@ -34,7 +23,6 @@ public class CardShow
         //为丢弃赋值
         foldedGround = GameObject.Find("丢弃");
         HandCard.Instance = GameObject.Find("手牌库").GetComponent<HandCard>();
-        instance = this;
         leftShowCard = GameObject.Find("左侧展示卡牌");
         ShowCard();
     }
@@ -46,16 +34,11 @@ public class CardShow
     public void ShowCard()
     {
         this.transform.GetComponent<Image>().sprite = data.cardImage;
-        this.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text =
-            data.attack.ToString();
-        this.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text =
-            data.defense.ToString();
-        this.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text =
-            data.health.ToString();
-        this.transform.GetChild(0).GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text =
-            data.attackDistance.ToString();
-        this.transform.GetChild(0).GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>().text =
-            data.moveDistance.ToString();
+        this.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text =data.attack.ToString();
+        this.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text =data.defense.ToString();
+        this.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text =data.health.ToString();
+        this.transform.GetChild(0).GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text =data.attackDistance.ToString();
+        this.transform.GetChild(0).GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>().text =data.moveDistance.ToString();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -171,12 +154,11 @@ public class CardShow
     public void OnPointerEnter(PointerEventData eventData)
     {
         leftShowCard.GetComponent<Image>().enabled = true;
-        leftShowCard.SetActive(true);
         leftShowCard.GetComponent<CardShowEx>().ShowCard(data);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        leftShowCard.SetActive(false);
+        leftShowCard.GetComponent<Image>().enabled = false;
     }
 }

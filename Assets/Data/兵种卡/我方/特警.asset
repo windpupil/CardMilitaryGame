@@ -28,7 +28,7 @@ MonoBehaviour:
       Value: 2
     - Key: "\u94C1\u77FF"
       Value: 0
-  gameObject: {fileID: 6695698467338365989, guid: 25339250a2697ee4589eb55bc6324089, type: 3}
+  gameObject: {fileID: 6695698467338365989, guid: 4382e7742b718364e8c7f99eb9ed26ee, type: 3}
   counts: 3
   locationRow: 080000000700000008000000
   locationColumn: 020000000300000004000000

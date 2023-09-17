@@ -5,6 +5,15 @@ using UnityEngine;
 public class SoliderFight : Fight
 {
     private RaycastHit2D hit;
+    private void Start() {
+        if (HealthBar != null)
+            HealthBar.transform.position = Camera.main.WorldToScreenPoint(this.transform.position);
+        attackNumber = data.maxAttackNumber;
+        hp = data.health;
+        attack = data.attack;
+        defense = data.defense;
+        attackDistance = data.attackDistance;
+    }
     private void OnMouseDown()
     {
         hit = new RaycastHit2D();
