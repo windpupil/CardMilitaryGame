@@ -19,7 +19,9 @@ public class HPShow : MonoBehaviour
 
     public void updateHPUI()
     {
-        this.GetComponent<Image>().fillAmount = fight.hp / fight.data.health;
+        // Debug.Log(fight.hp);
+        // Debug.Log(fight.gameObject.GetComponent<BaseObject>().data.health);
+        this.GetComponent<Image>().fillAmount = fight.hp / fight.gameObject.GetComponent<BaseObject>().data.health;
     }
 
     private void Update()

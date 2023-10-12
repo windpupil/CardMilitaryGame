@@ -1,27 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoliderFight : Fight
 {
     private RaycastHit2D hit;
-    private void Start() {
-        if (HealthBar != null)
-            HealthBar.transform.position = Camera.main.WorldToScreenPoint(this.transform.position);
-        attackNumber = data.maxAttackNumber;
-        hp = data.health;
-        attack = data.attack;
-        defense = data.defense;
-        attackDistance = data.attackDistance;
+    private void Start()
+    {
+        attackNumber = this.GetComponent<BaseObject>().data.maxAttackNumber;
+        hp = this.GetComponent<BaseObject>().data.health;
+        attack = this.GetComponent<BaseObject>().data.attack;
+        defense = this.GetComponent<BaseObject>().data.defense;
+        attackDistance = this.GetComponent<BaseObject>().data.attackDistance;
     }
     private void OnMouseDown()
     {
-        hit = new RaycastHit2D();
         if (IsAllowAttack())
         {
             GetAttackDistanceObject("Enemy");
             //如果有敌人，显示箭头
-
         }
     }
     private void OnMouseDrag()
@@ -36,13 +34,16 @@ public class SoliderFight : Fight
         {
             if (hit.collider != null)
             {
-                for (int i = 0; i < attackObject.Count; i++)
+                Debug.Log(attackableObjects.Count);
+                for (int i = 0; i < attackableObjects.Count; i++)
                 {
-                    Debug.Log(attackObject[i].name);
-                    if (hit.collider.gameObject == attackObject[i])
+                    Debug.Log("可攻击的敌人是"+attackableObjects[i].name);
+                    Debug.Log("可攻击的敌人的坐标是"+attackableObjects[i].GetComponent<BaseObject>().row+","+attackableObjects[i].GetComponent<BaseObject>().column);
+                    Debug.Log("鼠标检测的敌人是"+hit.collider.gameObject.name);
+                    if (hit.collider.gameObject == attackableObjects[i])
                     {
                         Debug.Log("攻击敌人");
-                        Hurt(attackObject[i].GetComponent<Fight>());
+                        hit.collider.gameObject.GetComponent<Fight>().Hurt(this.GetComponent<Fight>());
                         attackNumber--;
                     }
                 }

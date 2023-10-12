@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Fight :BaseObject
+[RequireComponent(typeof(BaseObject))]
+public class Fight: MonoBehaviour
 {
     [HideInInspector]
     public int attackNumber;             //本回合攻击次数
@@ -39,19 +40,6 @@ public class Fight :BaseObject
     {
         isAttacking = !isAttacking;
     }
-    [HideInInspector]
-    public Image HealthBar; // 血条
-    public List<GameObject> attackObject { get ;private set; }= new List<GameObject>();//攻击对象
-
-    /// <summary>
-    ///更新血量
-    /// </summary>
-    public void updateHP(float damage)
-    {
-        this.hp -= damage;
-        // Debug.Log(this.hp);
-        //更新ui
-    }
 
     public bool IsAllowAttack()
     {
@@ -64,76 +52,79 @@ public class Fight :BaseObject
             return false;
         }
     }
+    public List<GameObject> attackableObjects { get; private set; } = new List<GameObject>(); // 可攻击的对象
     /// <summary>
     /// 获取攻击距离内的敌人
     /// </summary>
-    /// <returns></returns>
-    public List<GameObject> GetAttackDistanceObject(string tagInput)
+    public void GetAttackDistanceObject(string tagInput)
     {
-        List<GameObject> enemy = new List<GameObject>();
-        for (int i = 1; i <= data.attackDistance; i++)
+        Debug.Log(this.GetComponent<BaseObject>().row + "," + this.GetComponent<BaseObject>().column);
+        attackableObjects.Clear();
+        for (int i = 1; i <= this.GetComponent<BaseObject>().data.attackDistance; i++)
         {
-            if (row + i < CollectionOfConstants.MAPROW && StaticGround.Instance.grounds[row + i, column].GetComponent<Ground>().objectControl != null && StaticGround.Instance.grounds[row + i, column].GetComponent<Ground>().objectControl.tag == tagInput)
+            if (this.GetComponent<BaseObject>().row + i < CollectionOfConstants.MAPROW && StaticGround.Instance.grounds[this.GetComponent<BaseObject>().row + i, this.GetComponent<BaseObject>().column].GetComponent<Ground>().objectControl != null && StaticGround.Instance.grounds[this.GetComponent<BaseObject>().row + i, this.GetComponent<BaseObject>().column].GetComponent<Ground>().objectControl.tag == tagInput)
             {
-                enemy.Add(StaticGround.Instance.grounds[row + i, column].GetComponent<Ground>().objectControl);
+                attackableObjects.Add(StaticGround.Instance.grounds[this.GetComponent<BaseObject>().row + i, this.GetComponent<BaseObject>().column].GetComponent<Ground>().objectControl);
             }
-            else if (row - i >= 0 && StaticGround.Instance.grounds[row - i, column].GetComponent<Ground>().objectControl != null && StaticGround.Instance.grounds[row - i, column].GetComponent<Ground>().objectControl.tag == tagInput)
+            else if (this.GetComponent<BaseObject>().row - i >= 0 && StaticGround.Instance.grounds[this.GetComponent<BaseObject>().row - i, this.GetComponent<BaseObject>().column].GetComponent<Ground>().objectControl != null && StaticGround.Instance.grounds[this.GetComponent<BaseObject>().row - i, this.GetComponent<BaseObject>().column].GetComponent<Ground>().objectControl.tag == tagInput)
             {
-                enemy.Add(StaticGround.Instance.grounds[row - i, column].GetComponent<Ground>().objectControl);
+                attackableObjects.Add(StaticGround.Instance.grounds[this.GetComponent<BaseObject>().row - i, this.GetComponent<BaseObject>().column].GetComponent<Ground>().objectControl);
             }
-            else if (column + i < CollectionOfConstants.MAPCOLUMN && StaticGround.Instance.grounds[row, column + i].GetComponent<Ground>().objectControl != null && StaticGround.Instance.grounds[row, column + i].GetComponent<Ground>().objectControl.tag == tagInput)
+            else if (this.GetComponent<BaseObject>().column + i < CollectionOfConstants.MAPCOLUMN && StaticGround.Instance.grounds[this.GetComponent<BaseObject>().row, this.GetComponent<BaseObject>().column + i].GetComponent<Ground>().objectControl != null && StaticGround.Instance.grounds[this.GetComponent<BaseObject>().row, this.GetComponent<BaseObject>().column + i].GetComponent<Ground>().objectControl.tag == tagInput)
             {
-                enemy.Add(StaticGround.Instance.grounds[row, column + i].GetComponent<Ground>().objectControl);
+                attackableObjects.Add(StaticGround.Instance.grounds[this.GetComponent<BaseObject>().row, this.GetComponent<BaseObject>().column + i].GetComponent<Ground>().objectControl);
             }
-            else if (column - i >= 0 && StaticGround.Instance.grounds[row, column - i].GetComponent<Ground>().objectControl != null && StaticGround.Instance.grounds[row, column - i].GetComponent<Ground>().objectControl.tag == tagInput)
+            else if (this.GetComponent<BaseObject>().column - i >= 0 && StaticGround.Instance.grounds[this.GetComponent<BaseObject>().row, this.GetComponent<BaseObject>().column - i].GetComponent<Ground>().objectControl != null && StaticGround.Instance.grounds[this.GetComponent<BaseObject>().row, this.GetComponent<BaseObject>().column - i].GetComponent<Ground>().objectControl.tag == tagInput)
             {
-                enemy.Add(StaticGround.Instance.grounds[row, column - i].GetComponent<Ground>().objectControl);
+                attackableObjects.Add(StaticGround.Instance.grounds[this.GetComponent<BaseObject>().row, this.GetComponent<BaseObject>().column - i].GetComponent<Ground>().objectControl);
             }
         }
-        return enemy;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     /// <summary>
-    /// 受伤
+    /// 本函数用于受伤
     /// </summary>
+    /// <param name="fight">传递攻击者的数值</param>
     public void Hurt(Fight fight)
     {
-        if (fight.isAttacking)
+        if (this.isAttacking)
         {
-            updateHP(computeDamageInAttack(fight.data.defense, this.data.attack));
+            updateHP(ComputeDamageInAttack(this.GetComponent<BaseObject>().data.defense, fight.gameObject.GetComponent<BaseObject>().data.attack));
         }
         else
         {
-            updateHP(computeDamageInDefense(fight.data.defense, this.data.attack));
+            updateHP(ComputeDamageInDefense(this.GetComponent<BaseObject>().data.defense, fight.gameObject.GetComponent<BaseObject>().data.attack));
         }
     }
+    /// <summary>
+    ///更新血量
+    /// </summary>
+    public void updateHP(float damage)
+    {
+        hp -= damage;
+        // Debug.Log("扣了"+damage+"点血");
+        GameObject.Find("Canvas/HealthBar").GetComponent<HPShow>().updateHPUI();
 
+    }
     ///<summary>
     ///计算对方处于防御状态时的伤害数值
     ///<summary>
-    public float computeDamageInDefense(int defense, int attack)
+    public float ComputeDamageInDefense(int defense, int attack)
     {
         return attack * attack / (attack + (float)4.5 * defense);
     }
-
     ///<summary>
     ///计算对方处于攻击状态时的伤害数值
     ///<summary>
-    public float computeDamageInAttack(int defense, int attack)
+    public float ComputeDamageInAttack(int defense, int attack)
     {
         return attack * attack / (attack + 2.0f * defense);
+    }
+    /// <summary>
+    /// 更新攻击次数
+    /// </summary>
+    public void updateObjectsControlAttackNumber()
+    {
+        attackNumber = this.GetComponent<BaseObject>().data.maxAttackNumber;
     }
 }

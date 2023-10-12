@@ -13,7 +13,7 @@ public class Ground : MonoBehaviour
     public UnityEvent ClickEvent;
     private void OnMouseDown()
     {
-        Debug.Log("点击了格子" + row + "," + column);
+        // Debug.Log("点击了格子" + row + "," + column);
         ClickEvent.Invoke();
     }
     public void ClearGroundListner()

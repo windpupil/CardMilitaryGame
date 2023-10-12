@@ -23,21 +23,21 @@ public class Manage : MonoBehaviour
 
     [Tooltip("本变量用于存放所有非资源卡牌")]
     public List<GameObject> notresourceCard = new List<GameObject>();
-    private int rounds = 1; //回合数
-    public int Rounds
+    private int _rounds = 1; //回合数
+    public int rounds
     {
-        get { return rounds; }
+        get { return _rounds; }
         set
         {
-            if (value != rounds)
+            if (value != _rounds)
             {
                 StaticGround.Instance.updateSoldierStateButton();
-                rounds = value;
+                _rounds = value;
             }
         }
     }
     [Tooltip("本变量用于存放Canvas")]
-    public Transform Canvas; //Canvas
+    public Transform Canvas;
 
     private static Manage instance;
     public static Manage Instance
@@ -89,10 +89,6 @@ public class Manage : MonoBehaviour
         Debug.Log("游戏准备阶段开始");
         isEnd = false;
         isBegin = true;
-        //更新士兵的realDistance
-        
-
-        
         //遍历所有资源点，将资源点的资源数加到资源UI上
         foreach (ResourceGround resourcePoint in resourcePoints)
         {
@@ -196,9 +192,8 @@ public class Manage : MonoBehaviour
             Debug.Log("游戏结算阶段开始");
             isAction = false;
             isEnd = true;
-            Rounds++;
-            // StaticGround.Instance.updateObjectsControlRealDistance(); //更新物体的realDistance
-            StaticGround.Instance.updateSoldierAttackNumber(); //更新物体的attackNumber
+            rounds++;
+            StaticGround.Instance.updateNumber(); //更新物体的attackNumber和realDistance
             AIBrain.Instance.Begin();
         }
     }
@@ -209,7 +204,7 @@ public class Manage : MonoBehaviour
         ResourceNumberUI.Instance.FoodNumber -= SuppliesConsumedPerTurn;
         ResourceNumberUI.Instance.IronNumber -= IronConsumedPerTurn;
         ResourceNumberUI.Instance.updateResourceNumberText();
-        if (CollectionOfConstants.ACTIONNUMBERLIMIT >= ActionNumberUI.Instance.actionNumberCurrentLimit && Rounds != 1)
+        if (CollectionOfConstants.ACTIONNUMBERLIMIT > ActionNumberUI.Instance.actionNumberCurrentLimit && rounds != 1)
         {
             ActionNumberUI.Instance.actionNumberCurrentLimit++;
         }
@@ -271,24 +266,4 @@ public class Manage : MonoBehaviour
             return false;
         }
     }
-    //观察者模式,但是暂时用不到
-    // private List<IObserver> observers = new List<IObserver>();
-    // //添加观察者
-    // public void AddObserver(IObserver observer)
-    // {
-    //     observers.Add(observer);
-    // }
-    // //移除观察者
-    // public void RemoveObserver(IObserver observer)
-    // {
-    //     observers.Remove(observer);
-    // }
-    // //发送通知给观察者
-    // public void Notify()
-    // {
-    //     for (int i = 0; i < observers.Count; i++)
-    //     {
-    //         observers[i]?.ResponseToNotify();
-    //     }
-    // }
 }

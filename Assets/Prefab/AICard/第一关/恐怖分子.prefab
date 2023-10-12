@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 644290235992004327}
   - component: {fileID: 1961073712516500981}
+  - component: {fileID: 1853643406992277626}
   m_Layer: 5
   m_Name: "\u6050\u6016\u5206\u5B50"
   m_TagString: Soldier
@@ -44,7 +45,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf18394eb7434042a6f69f3f0b111cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  realDistance: 0
+--- !u!114 &1853643406992277626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7595677294032592279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420ed6cc1cf81914c90df31c23f2e0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: b4af0a25dd4dc154ca4c983360fa7ccc, type: 2}
   row: 0
   column: 0
-  realDistance: 0

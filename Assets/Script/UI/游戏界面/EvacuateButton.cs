@@ -6,7 +6,7 @@ public class EvacuateButton : MonoBehaviour
 {
     public void OnMouseDown()
     {
-        StaticGround.Instance.grounds[GetComponentInParent<Solider>().row, GetComponentInParent<Solider>().column].GetComponent<Ground>().isHaveObject = false;
+        StaticGround.Instance.grounds[GetComponentInParent<BaseObject>().row, GetComponentInParent<BaseObject>().column].GetComponent<Ground>().isHaveObject = false;
         Destroy(this.transform.parent.gameObject);
     }
 }

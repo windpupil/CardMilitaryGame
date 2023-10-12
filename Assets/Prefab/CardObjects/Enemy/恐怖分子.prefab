@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 7649075823613349586}
   - component: {fileID: 6939970356633280623}
   m_Layer: 5
-  m_Name: Image
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,6 +287,7 @@ GameObject:
   - component: {fileID: -6991503155605657348}
   - component: {fileID: 559059571253533042}
   - component: {fileID: 1117444980472296695}
+  - component: {fileID: 6973933044509588548}
   m_Layer: 0
   m_Name: "\u6050\u6016\u5206\u5B50"
   m_TagString: Enemy
@@ -424,9 +425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf18394eb7434042a6f69f3f0b111cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: b4af0a25dd4dc154ca4c983360fa7ccc, type: 2}
-  row: 0
-  column: 0
   realDistance: 0
 --- !u!114 &1117444980472296695
 MonoBehaviour:
@@ -440,14 +438,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8295a792452ef714b8c8bacebc01a612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: b4af0a25dd4dc154ca4c983360fa7ccc, type: 2}
-  row: 0
-  column: 0
   attackNumber: 0
   attack: 0
   defense: 0
   attackDistance: 0
-  HealthBar: {fileID: 0}
+--- !u!114 &6973933044509588548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6695698467338365989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420ed6cc1cf81914c90df31c23f2e0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: b4af0a25dd4dc154ca4c983360fa7ccc, type: 2}
+  row: 0
+  column: 0
 --- !u!1 &7449562207304112379
 GameObject:
   m_ObjectHideFlags: 0

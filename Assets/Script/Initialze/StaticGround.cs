@@ -54,9 +54,9 @@ public class StaticGround : MonoBehaviour
     }
 
     /// <summary>
-    ///更新所有格子上士兵的攻击次数
+    ///更新所有格子上士兵的攻击次数和每回合最大移动距离
     /// <summary>
-    public void updateSoldierAttackNumber()
+    public void updateNumber()
     {
         for (int i = 0; i < CollectionOfConstants.MAPROW; i++)
         {
@@ -65,6 +65,7 @@ public class StaticGround : MonoBehaviour
                 if (grounds[i, j].GetComponent<Ground>().isHaveObject && grounds[i, j].GetComponent<Ground>().objectControl != null && grounds[i, j].GetComponent<Ground>().objectControl.tag == "Soldier")
                 {
                     grounds[i, j].GetComponent<Ground>().objectControl.GetComponent<Solider>().updateObjectsControlRealDistance();
+                    grounds[i, j].GetComponent<Ground>().objectControl.GetComponent<Fight>().updateObjectsControlAttackNumber();
                 }
             }
         }

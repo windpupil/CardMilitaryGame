@@ -104,11 +104,11 @@ public class CardEvent
                                 hit.collider.gameObject.transform.position,
                                 Quaternion.identity
                             );
-                            newGameObject.GetComponent<Solider>().data = data;
-                            newGameObject.GetComponent<Solider>().row = data.locationRow[
+                            newGameObject.GetComponent<BaseObject>().data = data;
+                            newGameObject.GetComponent<BaseObject>().row = data.locationRow[
                                 i
                             ];
-                            newGameObject.GetComponent<Solider>().column =
+                            newGameObject.GetComponent<BaseObject>().column =
                                 data.locationColumn[i];
                             //更新资源数
                             if (data.cost["补给"] != 0)

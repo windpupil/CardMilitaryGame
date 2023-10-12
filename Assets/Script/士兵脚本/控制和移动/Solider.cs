@@ -8,15 +8,9 @@ using UnityEngine;
 /// </summary>
 public class Solider : Control
 {
-    private static Solider instance;
-    public static Solider Instance
-    {
-        get { return instance; }
-    }
     private void Start()
     {
-        instance = this;
-        realDistance = data.moveDistance;
+        realDistance = this.GetComponent<BaseObject>().data.moveDistance;
     }
     /// <summary>
     /// 当物体被销毁时，将其从每回合消耗的资源中减去
@@ -24,15 +18,15 @@ public class Solider : Control
     /// </summary>
     private void OnDestroy()
     {
-        Manage.Instance.SuppliesConsumedPerTurn -= data.perCost["补给"];
-        Manage.Instance.IronConsumedPerTurn -= data.perCost["铁矿"];
+        Manage.Instance.SuppliesConsumedPerTurn -= this.GetComponent<BaseObject>().data.perCost["补给"];
+        Manage.Instance.IronConsumedPerTurn -= this.GetComponent<BaseObject>().data.perCost["铁矿"];
         StaticGround.Instance.updateGroundsColor();
     }
 
     private void OnMouseDown()
     {
-        Debug.Log("点击了士兵");
-        Debug.Log("士兵的可移动步数为：" + realDistance);
+        // Debug.Log("点击了士兵");
+        // Debug.Log("士兵的可移动步数为：" + realDistance);
         //更新整张地图恢复原来的颜色
         StaticGround.Instance.updateGroundsColor();
         StaticGround.Instance.ClearAllGroundListner();

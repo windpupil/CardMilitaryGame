@@ -94,7 +94,7 @@ public class CardShow: MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHand
                         if (hit.collider.gameObject == StaticGround.Instance.grounds[data.locationRow[i], data.locationColumn[i]] && (hit.collider.gameObject.GetComponent<Ground>().isHaveObject == false))
                         {
                             isUse = true;
-                            GameObject newGameObject = GameObject.Instantiate(data.gameObject, hit.collider.gameObject.transform.position, Quaternion.identity);
+                            GameObject newGameObject = GameObject.Instantiate(data.gameObject, hit.collider.gameObject.transform.position+ new Vector3(0, 0, -0.5f), Quaternion.identity);
                             newGameObject.GetComponent<BaseObject>().data = data;
                             newGameObject.GetComponent<BaseObject>().row = data.locationRow[i];
                             newGameObject.GetComponent<BaseObject>().column = data.locationColumn[i];

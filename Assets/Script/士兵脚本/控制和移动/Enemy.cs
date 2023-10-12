@@ -7,15 +7,9 @@ using UnityEngine.UI;
 
 public class Enemy : Control
 {
-    private static Enemy instance;
-    public static Enemy Instance
-    {
-        get { return instance; }
-    }
     private void Start()
     {
-        instance = this;
-        realDistance = data.moveDistance;
+        realDistance = this.GetComponent<BaseObject>().data.moveDistance;
     }
 
     /// <summary>
@@ -23,7 +17,7 @@ public class Enemy : Control
     /// </summary>
     private void OnDestroy()
     {
-        Manage.Instance.SuppliesConsumedPerTurn -= data.perCost["补给"];
-        Manage.Instance.IronConsumedPerTurn -= data.perCost["铁矿"];
+        Manage.Instance.SuppliesConsumedPerTurn -= this.GetComponent<BaseObject>().data.perCost["补给"];
+        Manage.Instance.IronConsumedPerTurn -= this.GetComponent<BaseObject>().data.perCost["铁矿"];
     }
 }
